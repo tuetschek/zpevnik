@@ -1,0 +1,27 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[top=0.6cm,bottom=1.3cm,left=1cm,right=1cm]{geometry}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{gmverse}
+\usepackage{multicol}
+
+%\let\Contentsline\contentsline 
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\renewcommand\contentsline[3]{#2\dotfill  #3\\}
+\setmainfont{Times New Roman}
+\setsansfont{Arial Narrow}
+
+\begin{document}
+\thispagestyle{empty}
+\pagestyle{empty}
+\section*{Obsah}
+\begin{multicols}{3}
+\sf
+\input{sorted_list.tex}
+\end{multicols}
+
+\end{document}
+
+

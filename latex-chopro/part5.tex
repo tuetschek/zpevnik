@@ -1,0 +1,1920 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[top=1cm,bottom=1.5cm,left=1cm,right=1cm]{geometry}
+\usepackage[czech,english]{babel}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{gchords}
+\usepackage{gtrcrd}
+%
+
+%\pagestyle{empty}
+
+%\documentclass[a4paper,twocolumn,czech,10pt]{article}
+%\usepackage[cp1250]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{babel}
+%\usepackage{color}
+%\usepackage{graphicx}
+%\usepackage{ifthen}
+%\usepackage{calc}
+%\usepackage{gchords}
+%%
+%\oddsidemargin -1cm \evensidemargin -1cm \textwidth 18cm \textheight 25.5cm \topmargin -2.3cm
+
+%
+\usepackage{fancyhdr}
+
+\usepackage{makeidx}
+\makeindex
+\pagestyle{plain}
+
+%
+%------definition of font colors-----------
+\definecolor{chorus}{rgb}{1,0,0}
+\definecolor{bridge}{rgb}{0,0,1}
+\definecolor{instr}{rgb}{.3,.3,.3}
+\definecolor{tab}{rgb}{.3,.3,.3}
+\definecolor{second_text}{rgb}{1,1,1}
+\definecolor{second_back}{rgb}{.7,.7,.7}
+%
+%------definition of environments-------
+\newenvironment{chorus}{\color{chorus}}{\normalcolor}
+\newenvironment{bridge}{\color{bridge}}{\normalcolor}
+\newenvironment{instr}{\color{instr}}{\normalcolor}
+\newenvironment{gtxtab}{\color{tab}}{\normalcolor}
+%
+%------counter for line numbers------
+%\newcounter{verscnt}[section]
+%\newcommand{\vers}{\stepcounter{verscnt}%
+%\makebox[0.5cm][r]{\scriptsize\theverscnt\normalsize}%
+%\makebox[0.5cm]{}}
+%
+\newcommand{\gtxchordsize}{\footnotesize}
+\setlength{\parindent}{0pt}
+
+%------PostScript-Header für die Chord-Songs------
+%\special{header=/usr/local/lib/guitartex/chord-common.ps}
+
+\sloppy
+\setlength{\unitlength}{1mm}
+
+\newcommand{\gtxchord}[2]{\sbox{\gtxchordbox}{#1}\sbox{\textbox}{#2}%
+	\ifthenelse{\lengthtest{\wd\textbox>\wd\gtxchordbox}}%
+	{%
+		\raisebox{2ex}[2ex][2.5ex]{\makebox[0pt][l]{\scriptsize\bf#1}}#2%
+	}{%
+	\raisebox{2ex}[2ex][2.5ex]{\makebox[0pt][l]{\scriptsize\bf#1}}\makebox[\wd\gtxchordbox+0.5em][l]{#2}%
+	}%
+}%
+
+\newcommand{\guitartab}{%
+\makebox[0cm][l]{\raisebox{12.5ex}{\footnotesize{e}}}%
+\makebox[0cm][l]{\raisebox{10.5ex}{\footnotesize{B}}}%
+\makebox[0cm][l]{\raisebox{8.5ex}{\footnotesize{G}}}%
+\makebox[0cm][l]{\raisebox{6.5ex}{\footnotesize{D}}}%
+\makebox[0cm][l]{\raisebox{4.5ex}{\footnotesize{A}}}%
+\makebox[0cm][l]{\raisebox{2.5ex}{\footnotesize{E}}}%
+~~
+\makebox[0cm][l]{\raisebox{13ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{11ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{9ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{7ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{5ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{3ex}{\line(1,0){130}}}%
+~}
+
+\newcommand{\basstab}{%
+\makebox[0cm][l]{\raisebox{8.5ex}{\footnotesize{G}}}%
+\makebox[0cm][l]{\raisebox{6.5ex}{\footnotesize{D}}}%
+\makebox[0cm][l]{\raisebox{4.5ex}{\footnotesize{A}}}%
+\makebox[0cm][l]{\raisebox{2.5ex}{\footnotesize{E}}}%
+~~
+\makebox[0cm][l]{\raisebox{9ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{7ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{5ex}{\line(1,0){130}}}%
+\makebox[0cm][l]{\raisebox{3ex}{\line(1,0){130}}}%
+~}
+
+\newcommand{\gtxtabs}[2]{\makebox[0cm][l]{\raisebox{#1}{#2}}}
+%
+%
+%
+
+% faking table of contents
+\makeatletter
+\renewcommand*{\tableofcontents}{%
+  \begingroup
+    \let\@input\@gobble
+    \@starttoc{toc}%
+  \endgroup
+}
+\makeatother
+% end fake table of contents
+
+
+%
+%
+%
+
+%------start of document-----------
+\begin{document}
+\tableofcontents % this is fake, no output
+\newsavebox{\gtxchordbox}
+\newsavebox{\textbox}
+\setcounter{page}{108}
+
+\newpage
+\addcontentsline{toc}{section}{She's Not There}
+\section*{She's Not There}
+\index{She's Not There}\typeout{She's Not There}\index{The Zombies!She's Not There}\textit{The Zombies}
+
+\textit{Intro:}\\
+\begin{gtxtab}
+\footnotesize \verb!     (Bass notes)! \normalsize \newline
+\footnotesize \verb!|----||-----------------|-----------------||! \normalsize \newline
+\footnotesize \verb!|--2-||-----2---0-4-2---|-----2---0-4-2---||! \normalsize \newline
+\footnotesize \verb!|----||-0-----0---------|-0-----0---------||! \normalsize \newline
+\footnotesize \verb!|----||-----------------|-----------------||! \normalsize \newline
+\end{gtxtab}
+~\\
+\gtxchord{Am}{Well~no~one~}\gtxchord{D}{told~me~a}\gtxchord{Am7}{bout~}\gtxchord{D}{her~}\\
+\gtxchord{Am}{The~}\gtxchord{F}{way~she~}\gtxchord{Am}{lied~}\gtxchord{D}{~}\\
+\gtxchord{Am7}{Well~no~one~}\gtxchord{D}{told~me~a}\gtxchord{Am7}{bout~}\gtxchord{D}{her~}\\
+\gtxchord{Am}{How~many~}\gtxchord{F}{people~}\gtxchord{A}{cried~}\\
+~\\
+\textit{Chorus:}\\
+~\\
+\gtxchord{}{Well~it's~too~}\gtxchord{D}{late~to~}\gtxchord{Dm}{say~you're~}\gtxchord{Am}{sorry~}\\
+\gtxchord{}{How~would~I~}\gtxchord{Em}{know,~why~should~I~}\gtxchord{Am}{care?~}\\
+\gtxchord{}{Please~don't~}\gtxchord{D}{bother~}\gtxchord{Dm}{trying~to~}\gtxchord{C}{find~her~}\\
+\gtxchord{}{She's~not~}\gtxchord{E7}{there~}\\
+~\\
+\gtxchord{}{Well~let~me~tell~you~'bout~the~}\gtxchord{Am}{way~she~looked~}\\
+\gtxchord{D}{The~way~she~}\gtxchord{Am}{acted,~the~}\gtxchord{F}{color~of~her~}\gtxchord{Am}{hair}\gtxchord{D}{~}\\
+\gtxchord{}{Her~voice~was~}\gtxchord{Am}{soft~and~good,~}\gtxchord{F}{~her~eyes~were~}\gtxchord{Am}{clear~and~bright~}\\
+\gtxchord{D}{But~she's~not~there~}\\
+~\\
+Well no one told me about her \\
+What could I do \\
+Well no one told me about her \\
+Though they all knew \\
+~\\
+\textit{Chorus:}\\
+\textit{Solo:}\\ \\
+\gtxchord{Am}{~}\gtxchord{D}{~(7x)~~~~}\gtxchord{A}{~}\gtxchord{A7}{~}\\
+\textit{Chorus:}\\
+~\\
+
+\addcontentsline{toc}{section}{Who By Fire}
+\section*{Who By Fire}
+\index{Who By Fire}\typeout{Who By Fire}\index{Leonard Cohen!Who By Fire}\textit{Leonard Cohen}
+
+\textit{intro:}\\ \\
+\gtxchord{Am/E}{~}\gtxchord{Am/F}{~}\gtxchord{E(7)}{~}\gtxchord{E(7)}{~}\\
+~\\
+\textit{1.}\\
+\gtxchord{}{And~}\gtxchord{Am}{who~}\gtxchord{G}{by~}\gtxchord{Am}{fire,~}\gtxchord{Am}{who~}\gtxchord{G}{by~}\gtxchord{Am}{water,~}\\
+\gtxchord{C/E}{who~}\gtxchord{G/D}{in~the~}\gtxchord{C/E}{sunshine,~}\gtxchord{C/E}{who~}\gtxchord{G/D}{in~the~}\gtxchord{C/E}{night~time,~}\\
+\gtxchord{Am}{who~}\gtxchord{G}{by~}\gtxchord{Am}{high~ordeal,~}\gtxchord{Am}{who~}\gtxchord{G}{by~}\gtxchord{Am}{common~trial,~}\\
+\gtxchord{C/E}{who~in~your~}\gtxchord{G/D}{merry~merry~}\gtxchord{C/E}{month~of~may,~}\\
+\gtxchord{C/E}{who~by~}\gtxchord{G/D}{very~}\gtxchord{C/E}{slow~decay,~}\\
+\gtxchord{}{and~}\gtxchord{Am/E}{who~shall~I~sa}\gtxchord{Am/F}{y~is~}\gtxchord{E/B}{calling?~}\gtxchord{E/B}{~}\\
+~\\
+\textit{2.}\\
+And~who~in~her~lonely~slip,~who~by~barbiturate,~\\
+who~in~these~realms~of~love,~who~by~something~blunt,~\\
+and~who~by~avalanche,~who~by~powder,~\\
+who~for~his~greed,~who~for~his~hunger,~\\
+and~who~shall~I~say~is~calling?~\\
+~\\
+\textit{3.}\\
+And~who~by~brave~assent,~who~by~accident,~\\
+who~in~solitude,~who~in~this~mirror,~\\
+who~by~his~lady's~command,~who~by~his~own~hand,~\\
+who~in~mortal~chains,~who~in~power,~\\
+and~who~shall~I~say~is~calling?~~\\
+~\\
+
+\addcontentsline{toc}{section}{I'll Get You}
+\section*{I'll Get You}
+\index{I'll Get You}\typeout{I'll Get You}\index{The Beatles!I'll Get You}\textit{The Beatles}
+
+
+\textit{1.}\\
+\gtxchord{}{Oh~}\gtxchord{D$\flat$}{yeah,~~oh~y}\gtxchord{A$\flat$}{eah,~oh~}\gtxchord{D$\flat$}{yeah,~oh~}\gtxchord{A$\flat$}{yeah.}\\
+\gtxchord{}{I}\gtxchord{D$\flat$}{magine~I'm~in~love~with~you~it's~}\gtxchord{G$\flat$}{easy~'cause~I~}\gtxchord{A$\flat$7}{know;}\\
+\gtxchord{}{I've~i}\gtxchord{D$\flat$}{magined~I'm~in~}\gtxchord{Bm}{love~with~you}\\
+\gtxchord{G$\flat$}{many,~many,~many~times~be}\gtxchord{A$\flat$}{fore.}\\
+\gtxchord{}{It's~not~}\gtxchord{D$\flat$}{like~me~to~pre}\gtxchord{A$\flat$m}{tend,~but~I'll~}\gtxchord{D$\flat$}{get~you.}\\
+\gtxchord{}{I'll~get~you~in~the~}\gtxchord{B$\flat$m}{end;}\\
+\gtxchord{}{Yes,~I~}\gtxchord{G$\flat$}{will,~I'll~get~you~in~the~}\gtxchord{A$\flat$7}{end.}\\
+
+
+\textit{2.}\\
+Oh~yeah,~~oh~yeah,~oh~yeah,~oh~yeah.\\
+I~think~about~you~night~and~day.\\
+I~need~you~and~it's~true;\\
+When~I~think~about~you~I~can~say\\
+I'm~never,~never,~never~never~blue.\\
+So~I'm~telling~you,~my~friend,\\
+That~I'll~get~you,~I'll~get~you~in~the~end;\\
+Yes,~I~will,~I'll~get~you~in~the~end.\\
+
+
+
+
+\textit{bridge:}\\ \\
+\gtxchord{}{Oh~}\gtxchord{D$\flat$}{yeah,~oh~}\gtxchord{Am}{yeah}\\
+\gtxchord{G$\flat$}{Well,~there's~gonna~be~a~time}\\
+\gtxchord{D$\flat$}{When~I'm~gonna~change~your~mind.}\\
+\gtxchord{E$\flat$7}{So~you~might~as~well~resign~your}\gtxchord{A$\flat$7}{self~to~me.~Oh~yeah.}\\
+
+
+\textit{1.}\\
+
+
+[:~Oh~yeah,~oh~yeah~:]{~Oh~yeah.}
+
+
+%
+%----- New Song -----
+\newpage
+
+\addcontentsline{toc}{section}{All For Love}
+\section*{All For Love}
+\index{All For Love}\typeout{All For Love}\index{Bryan Adams, Sting \& Rod Stewart!All For Love}\textit{Bryan Adams, Sting \& Rod Stewart}\\
+
+
+\textit{Verse 1:}\\
+
+\gtxchord{D}{When~it's~love}\gtxchord{Dsus4}{~you~g}\gtxchord{D}{ive,~(I'll~be~a~man~of~good~faith.)}\\
+\gtxchord{D}{then~in~love}\gtxchord{Dsus4}{~you~~l}\gtxchord{D}{ive.~(I'll~make~a~stand.~I~won't~break.)}\\
+\gtxchord{D/F$\sharp$}{I'll~be~the~rock~you~can~build~on}\gtxchord{G}{,}\\
+\gtxchord{}{be~there~when~you're~old,}\gtxchord{D/A}{}\\
+\gtxchord{}{to~have~and~to~hold}\gtxchord{A}{.}\\
+
+\textit{Verse 2:}\\
+When~there's~love~inside~(I~swear~I'll~always~be~strong.)\\
+then~there's~a~reason~why.(I'll~prove~to~you~we~belong.)\\
+I'll~be~the~wal~that~protects~you\\
+from~the~wind~and~the~rain,\\
+\gtxchord{}{from~the~hurt~and~}\gtxchord{A}{pain.}\gtxchord{Asus4}{}\gtxchord{A}{}\\
+
+
+\textit{Chorus:}\\
+
+\gtxchord{D}{~~}\gtxchord{Em7}{~~}\gtxchord{D/F$\sharp$}{~~~}\gtxchord{(N.C.)}{}\\
+\gtxchord{}{Let's~make~it~}\gtxchord{Em}{all~}\gtxchord{D}{for~}\gtxchord{A}{one~and~}\gtxchord{D/F$\sharp$}{all~for~}\gtxchord{G}{love.}\\
+\gtxchord{Em7}{Let~the~one~you~hold~be~the~one~you~w}\gtxchord{D/A}{ant,~the~one~you~need,}\gtxchord{A}{}\\
+\gtxchord{}{'cause~wh}\gtxchord{D/F$\sharp$}{en~it's~all~}\gtxchord{G}{for~}\gtxchord{Bm}{one~}\gtxchord{A}{it's~one~}\gtxchord{D/F$\sharp$}{for~all.}\gtxchord{G}{}\\
+\gtxchord{}{When~there's~some}\gtxchord{Em7}{one~that~you~}\gtxchord{D/F$\sharp$}{know}\\
+\gtxchord{}{then~just~}\gtxchord{G}{let~your~feelin}\gtxchord{D/A}{gs~show}\\
+\gtxchord{}{and~make~it~al}\gtxchord{G}{l~fo}\gtxchord{D/F$\sharp$}{r~~on}\gtxchord{Em}{e~and~al}\gtxchord{A}{l~for~lov}\gtxchord{D}{e.}\\
+
+
+\textit{Verse 3:}\\
+When~it's~love~you~make~(I'll~be~the~fire~in~your~night.)\\
+then~it's~love~you~take.~(I~will~defend,~I~will~fight.)\\
+I'll~be~there~when~you~need~me.\\
+When~honor's~at~stake,\\
+this~vow~I~will~make.\\
+
+
+\textit{Chorus:}\\
+Then~it's~...\\
+
+
+\textit{Bridge:}\\
+
+
+\gtxchord{Bm}{Don't~lay~our~lov}\gtxchord{G}{e~to~rest}\\
+\gtxchord{}{'cause~we~could~stan}\gtxchord{Em7}{d~up~to~}\gtxchord{D/F$\sharp$}{the~test}\gtxchord{G}{}\\
+\gtxchord{A}{We~got~}\gtxchord{Bm}{everything~and~more}\gtxchord{D/F$\sharp$}{~than~we~had~plan}\gtxchord{G}{ned,}\gtxchord{Asus4}{}\\
+\gtxchord{A}{more~than~the~rive}\gtxchord{Bm}{rs~that~run~the~land.}\gtxchord{D/F$\sharp$}{}\\
+\gtxchord{}{We've~got~it~}\gtxchord{G}{all~in~our}\gtxchord{A}{~hands.}\\
+
+
+
+
+\textit{Solo:}\\
+
+
+
+
+\textit{Chorus:}\\
+Now~it's~...\\
+
+
+\addcontentsline{toc}{section}{Adeste Fideles}
+\section*{Adeste Fideles}
+\index{Adeste Fideles}\typeout{Adeste Fideles}
+
+\gtxchord{}{A}\gtxchord{F}{deste~fid}\gtxchord{C}{eles,~}\gtxchord{F}{laeti~triu}\gtxchord{B$\flat$}{m~-}\gtxchord{F}{phan}\gtxchord{C}{tes,}\\
+\gtxchord{}{ve~}\gtxchord{G7}{-nite,~ve}\gtxchord{C}{-ni-te~in~}\gtxchord{C}{Be--}\gtxchord{G}{--tle}\gtxchord{C}{-hem.}\\
+\gtxchord{F}{Natum~vi-}\gtxchord{Gm}{de-}\gtxchord{F}{te~}\gtxchord{C}{Regem~}\gtxchord{Dm}{ange-}\gtxchord{C}{lorum.}\\
+\gtxchord{}{Ve-}\gtxchord{F}{nite~a-do-}\gtxchord{F}{remus,~ve-}\gtxchord{F}{nite~a-}\gtxchord{B$\flat$}{do-}\gtxchord{B$\flat$}{re-m}\gtxchord{C}{us,}\\
+\gtxchord{}{ve-}\gtxchord{B$\flat$}{nite~a-do-}\gtxchord{C}{re--}\gtxchord{Dm}{mu-s~~~}\gtxchord{F}{Do---}\gtxchord{C}{mi-nu}\gtxchord{F}{m.}\\
+
+
+Jdou~zástupy~věrných~s~jásotem~a~chválou,\\
+my~též~do~Betléma~pospíchejme.\\
+Vítejme~Pána,~Krále~andělského,\\
+Ježíši~zrozenému,~Ježíši~zrozenému,\\
+Ježíši~zrozenému~zpívejme.\\
+
+
+Nun~freut~euch,~ihr~Christen,~singet~Jubellieder\\
+und~kommet,~o~kommet~nach~Bethlehem.\\
+Christus,~der~Heiland,~stieg~zu~uns~hernieder.\\
+Kommt,~lasset~uns~anbeten;~Kommt,~lasset~uns~anbeten;\\
+Kommt,~lasset~uns~anbeten~den~König,~den~Herrn.\\
+
+
+O~come,~all~ye~faithful,~joyful~and~triumphant,\\
+O~come~ye,~O~come~ye,~to~Bethlehem.\\
+Come~and~behold~Him,~born~the~King~of~angels;\\
+O~come,~let~us~adore~Him,~O~come,~let~us~adore~Him,\\
+O~come,~let~us~adore~Him,~Christ~the~Lord.\\
+
+\addcontentsline{toc}{section}{Ej padá padá rosenka}
+\section*{Ej padá padá rosenka}
+\index{Ej padá padá rosenka}\typeout{Ej padá padá rosenka}\index{Blue Effect!Ej padá padá rosenka}\textit{Blue Effect}\\
+
+
+\gtxchord{Dmi}{Ej~padá,~~}\gtxchord{F}{pa}\gtxchord{C}{dá~~}\gtxchord{B}{ro}\gtxchord{Ami}{sen-}\gtxchord{Dmi}{ka}\\
+\gtxchord{Dmi}{Spaly~by~~}\gtxchord{F}{mo}\gtxchord{C/E}{je~~~}\gtxchord{B/D}{~~o-}\gtxchord{Ami}{čen-}\gtxchord{Dmi}{ka}\\
+\gtxchord{}{/:~}\gtxchord{Fmi}{Spaly~by~~}\gtxchord{Gmi}{moje,~~}\gtxchord{Ami}{spaly~by~~}\gtxchord{Dmi}{aj~~tv}\gtxchord{Ami}{oje}\\
+\gtxchord{Dmi}{Spaly~by,~}\gtxchord{F}{duša}\gtxchord{C}{~~má,~}\gtxchord{B}{o-}\gtxchord{Ami}{bo--}\gtxchord{Dmi}{je~:/}\\
+
+
+Ej~padá,~padá~listopad\\
+Pozdravuj~milů~nastokrát\\
+\gtxchord{}{/:~Pozdravuj~milů,~holuběnku~sivů}\\
+\gtxchord{}{Že~sa~už~nevrátím~nikdy~viac~:/}\\
+
+
+\textit{Solo}\\
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Angel}
+\section*{Angel}
+\index{Angel}\typeout{Angel}\index{Jimi Hendrix!Angel}\textit{Jimi Hendrix}\\
+
+\textit{intro:}\\
+
+\gtxchord{F$\sharp$9~|~E6/9sus4~|~F$\sharp$9~B9~|~E6/9~|~E6/9}{}\\
+\textit{verse:}\\
+
+\gtxchord{F$\sharp$}{Angel~}\gtxchord{C$\sharp$}{came~down~from~}\gtxchord{G$\sharp$m}{heaven~yesterday}\\
+\gtxchord{B}{Stayed~with~me~just~long~enough~to~}\gtxchord{F$\sharp$}{rescue~me}\gtxchord{E}{....}\\
+\gtxchord{F$\sharp$}{And~she~}\gtxchord{C$\sharp$}{told~me~a~}\gtxchord{G$\sharp$m}{story~yesterday}\\
+\gtxchord{B}{A$\flat$out~the~sweet~love~between~the~moon}\\
+\hspace*\fill and~the~\gtxchord{F$\sharp$}{deep~blue~}\gtxchord{E}{sea}\\
+\gtxchord{D}{Then~she~spread~her~wings~high~}\gtxchord{F$\sharp$}{over~me....she~said}\\
+\gtxchord{}{She's~}\gtxchord{G$\sharp$m}{gonna~}\gtxchord{A$\sharp$m}{come~back~to}\gtxchord{B}{morrow}\\
+\gtxchord{B}{And~I~said....}\\
+\textit{chorus:}\\
+\gtxchord{E}{Fly~on~my~sweet~}\gtxchord{F$\sharp$m}{angel.........}\\
+\gtxchord{C}{Fly~on~}\gtxchord{A}{through~the~}\gtxchord{D}{sky..}\gtxchord{D$\sharp$}{.......}\\
+\gtxchord{E}{Fly~on~my~sweet~}\gtxchord{F$\sharp$m}{angel..........}\\
+\gtxchord{C}{Tomorrow~}\gtxchord{A}{I'm~gonna~}\gtxchord{D}{be~}\gtxchord{D$\sharp$}{by~your~}\gtxchord{E}{side}\gtxchord{C}{}\gtxchord{A}{}\gtxchord{D}{}\gtxchord{D$\sharp$}{}\\
+
+Sure~enough~this~woman~came~home~to~me\\
+Silver~wings~silhouetted~against~a~child's~sunrise\\
+And~my~Angel~she~said~unto~me\\
+Today~is~the~day~for~you~to~rise.\\
+Take~my~hand~you're~gonna~be~my~man,~you're~gonna~rise\\
+Then~she~took~me~high~over~yonder\\
+And~I~said..\\
+
+\textit{chorus}
+\addcontentsline{toc}{section}{Jahody mražený}
+\section*{Jahody mražený}
+\index{Jahody mražený}\typeout{Jahody mražený}\index{Jiří Schellinger!Jahody mražený}\textit{Jiří Schellinger}\\
+
+\gtxchord{A}{Poslala~mě~}\gtxchord{D}{moje~dívka~}\gtxchord{A}{pro~jahody~červený,}\\
+\gtxchord{G}{bez~nich~se~}\gtxchord{E}{prý~}\gtxchord{A}{nemám~vra}\gtxchord{E}{cet,~}\gtxchord{A}{tak~tu~stojím~ztrápený.}\\
+\gtxchord{}{Když~se~dívám~}\gtxchord{D}{co~je~sně}\gtxchord{A}{hu,~fouká~vítr,~pálí~mráz,}\\
+\gtxchord{G}{možná~že~}\gtxchord{E}{si~ho}\gtxchord{A}{lka~myslí,~}\gtxchord{E}{že~se~mi~tak~zbaví~snáz.}\\
+\gtxchord{}{/:~}\gtxchord{G}{Zapomněla~}\gtxchord{A}{váže}\gtxchord{D}{ní,~na~j}\gtxchord{A}{ahody~mraže}\gtxchord{E4}{ný,}\\
+\gtxchord{G}{na~jahody~}\gtxchord{A}{mraže}\gtxchord{D}{ný,~}\gtxchord{A}{v~igelitu~bale}\gtxchord{E4}{ný.~:/}\\
+
+Pohádku~to~připomíná~o~dvanácti~měsíčkách\\
+nechtěla~mi~říci~sbohem,~teď~bych~chtěla~abych~plách.\\
+Mohl~bych~se~klidně~vrátit,~vím~však~že~mě~nečeká,\\
+měla~mi~to~říci~sbohem,~že~jiného~ráda~má.
+
+%
+%----- New Song -----
+
+
+\addcontentsline{toc}{section}{Because the Night}
+\section*{Because the Night}
+\index{Because the Night}\index{Bruce Springsteen and Patti Smith!Because the Night}
+\textit{Bruce Springsteen and Patti Smith}\\
+
+\gtxchord{Bm}{}\gtxchord{G}{}\gtxchord{A}{}\gtxchord{Bm}{}\gtxchord{G}{}\gtxchord{A}{}\gtxchord{Bm}{}\\
+
+\textit{Verse:}\\
+
+\gtxchord{Bm}{Take~me~}\gtxchord{G}{now,~baby,~}\gtxchord{A}{here~as~I~}\gtxchord{Bm}{am.}\\
+\gtxchord{}{Pull~me~}\gtxchord{G}{close~try~and~}\gtxchord{A}{under}\gtxchord{Bm}{stand.}\\
+\gtxchord{}{Desire~is~}\gtxchord{G}{hunger,~is~the~}\gtxchord{A}{fire~I~}\gtxchord{Bm}{breathe.}\\
+\gtxchord{}{Love~is~a~}\gtxchord{G}{banquet~on~}\gtxchord{A}{which~we~}\gtxchord{Bm}{feed.}\\
+\gtxchord{B$\flat$}{Come~on~n}\gtxchord{G}{ow,~try~and~}\gtxchord{D}{under}\gtxchord{A}{stand}\\
+\gtxchord{}{the~}\gtxchord{Bm}{way~I~}\gtxchord{G}{feel~when~I'm~}\gtxchord{D}{in~your~}\gtxchord{A}{hand.}\\
+\gtxchord{B$\flat$}{Take~my~h}\gtxchord{G}{and;~come~}\gtxchord{D}{under~}\gtxchord{A}{cover.}\\
+\gtxchord{}{They~}\gtxchord{C}{can't~hurt~you~now,~}\gtxchord{Bm}{can't~hurt~you~now,~}\\
+\hspace*\fill \gtxchord{F$\sharp$}{can't~hurt~you~now.}\\
+
+\textit{Chorus:}\\
+
+\gtxchord{Bm}{Because~the~}\gtxchord{G}{night~be}\gtxchord{D}{longs~to~}\gtxchord{A}{lovers.}\\
+\gtxchord{Bm}{Because~the~}\gtxchord{G}{night~be}\gtxchord{A}{longs~to~}\gtxchord{Bm}{lust.}\\
+\gtxchord{Bm}{Because~the~}\gtxchord{G}{night~be}\gtxchord{D}{longs~to~}\gtxchord{A}{lovers.}\\
+\gtxchord{Bm}{Because~the~}\gtxchord{G}{night~be}\gtxchord{A}{longs~to~}\gtxchord{Bm}{us.}\\
+
+\textit{Verse:}\\
+
+Have~I~doubt~when~I'm~alone?\\
+Love~is~a~ring~of~the~telephone.\\
+Love~is~an~angel~disguised~as~lust,\\
+here~in~our~bed~until~the~morning~comes.\\
+Come~on~now,~try~and~understand\\
+the~way~I~feel~under~your~command.\\
+Take~my~hand~as~the~sun~descends.\\
+They~can't~touch~you~now,~can't~touch~you~now,\\
+\hspace*\fill can't~touch~you~now.\\
+
+
+\textit{Repeat chorus}\\
+
+
+\textit{Ending:}\\
+
+\gtxchord{}{In~}\gtxchord{D}{love~we~}\gtxchord{A}{fell;~with~}\gtxchord{D}{doubt~the~}\gtxchord{A}{viscious~circle~}\\
+\hspace*\fill\gtxchord{Bm}{turns~and~}\gtxchord{A}{burns.}\\
+\gtxchord{}{With}\gtxchord{D}{out~you,~}\gtxchord{A}{oh~I~cannot~}\gtxchord{Bm}{live,}\\
+\hspace*\fill for\gtxchord{A}{give~the~}\gtxchord{D}{yearning,~}\gtxchord{A}{burning}\\
+\gtxchord{}{I~be}\gtxchord{G}{lieve~it's~}\gtxchord{D}{time,~too~}\gtxchord{G}{real~to~}\gtxchord{G}{feel,}\\
+\gtxchord{}{so~}\gtxchord{Bm}{touch~me~}\gtxchord{G}{now,~}\gtxchord{D}{touch~me~}\gtxchord{Bm}{now,~}\gtxchord{G}{touch~me~---~}\gtxchord{F$\sharp$}{now.}\\
+
+\textit{Repeat chorus and fade.}
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Come Together}
+\section*{Come Together}
+\index{Come Together}\typeout{Come Together}\index{The Beatles!Come Together}\textit{The Beatles}\\
+
+
+\gtxchord{Dm}{Here~come~old~flat~top,~He~come~grooving~up~slowly,}\\
+\gtxchord{Dm}{He~got~Joo~Joo~eyeball,~He~one~holy~roller~}\\
+\gtxchord{}{H}\gtxchord{A7}{e~got~~Hair~down~to~his~knee;~~}\\
+\gtxchord{G7}{Got~to~be~a~joker,~he~just~do~what~he~please.~}\\
+
+
+\gtxchord{Dm}{He~wear~no~shoe~shine,~he~got~toe~jam~football}\\
+\gtxchord{Dm}{He~got~monkey~finger,~he~shoot~co-ca~cola}\\
+\gtxchord{}{He~say,~}\gtxchord{A7}{"I~know~you,~you~know~me."~~}\\
+\gtxchord{G7}{One~thing~I~can~tell~you~is~you~got~to~be~free}\\
+\gtxchord{}{Come~}\gtxchord{Bm}{Together,~Right~}\gtxchord{G}{now,~o}\gtxchord{A}{ver~me}\\
+
+
+He~bag~production,~He~got~wal-rus~gumboot\\
+He~got~O-no~sideboard,~He~one~spinal~cracker\\
+He~got~feet~down~below~his~knee\\
+Hold~you~in~his~armchair,~you~can~feel~his~disease~\\
+Come~together,~right~now,~~over~me\\
+
+
+He~roller~coaster,~he~got~early~warning\\
+He~got~muddy~water,~He~one~Mo-jo~filter\\
+He~say,~"~One~and~one~and~one~is~three."\\
+Got~to~be~good~looking~'cause~he~so~hard~to~see~\\
+Come~together,~Right~now,~over~me\\
+
+\addcontentsline{toc}{section}{Dětské šaty}
+\section*{Dětské šaty}
+\index{Dětské šaty}\typeout{Dětské šaty}\index{Petr Kalandra!Dětské šaty}\textit{Petr Kalandra}\\
+
+
+\gtxchord{G}{}\gtxchord{C}{}\gtxchord{D}{}\gtxchord{G}{}\gtxchord{Emi}{}\gtxchord{C}{}\gtxchord{D}{}\gtxchord{G}{}\\
+
+
+\gtxchord{Emi}{Setři~si~}\gtxchord{C}{tvář~}\gtxchord{D}{a~slzí~}\gtxchord{G}{pár}\\
+\gtxchord{Emi}{a~řekni~}\gtxchord{C}{co~ti~na~tom~}\gtxchord{D}{zále}\gtxchord{G}{ží}\\
+\gtxchord{Emi}{dnes~přišla~}\gtxchord{C}{chvíle~a~}\gtxchord{D}{mě~se~zdá}\gtxchord{G}{,}\\
+\gtxchord{Emi}{že~dětské~šaty~jsou~ti~}\gtxchord{G}{přítěží}\\
+\gtxchord{C}{čas~je~odnáší}\gtxchord{G}{}\\
+
+
+\gtxchord{G}{}\gtxchord{C}{}\gtxchord{D}{}\gtxchord{G}{}\gtxchord{Emi}{}\gtxchord{C}{}\gtxchord{D}{}\gtxchord{G}{}\\
+
+
+Šli~jsme~loukou,~šli~jsme~strání\\
+a~dětství~odletělo~bůhví~kam\\
+má~pestrost~křídel~a~dívčích~přání\\
+a~nebo~jako~kytka~uvadá\\
+v~nočních~zahradách\\
+a~nebo~jako~kytka~uvadá\\
+v~nočních~zahradách\\
+
+~\\
+
+\gtxchord{Emi}{Dětství~odletělo~}\gtxchord{D}{bůhví~}\gtxchord{Emi}{kam}\\
+\gtxchord{Emi}{zpátky~nevrátí~se,~}\gtxchord{D}{já~ho~}\gtxchord{Emi}{znám}\\
+
+Dětství~odletělo~bůhví~kam\\
+zpátky~nevrátí~se,~já~ho~znám\\
+
+
+\gtxchord{C}{nevěř~pohádkám}\gtxchord{G}{}
+
+
+%
+%----- New Song -----
+\addcontentsline{toc}{section}{Cukrářskej učeň}
+\section*{Cukrářskej učeň}
+\index{Cukrářskej učeň}\typeout{Cukrářskej učeň}\index{BSP!Cukrářskej učeň}\textit{BSP}\\
+
+
+\textit{1.}\\
+
+\gtxchord{Am}{Láska~je~~}\gtxchord{C}{solí~~}\gtxchord{G}{já~se~plavím~v~mořích~~}\gtxchord{Dsus2}{rád}\\
+\gtxchord{Am}{v~trámoví~~}\gtxchord{C}{bolí~~}\gtxchord{G}{hoří~slanej~~}\gtxchord{D}{prach}\\
+\gtxchord{Am}{Láska~je~~}\gtxchord{C}{solí~}\gtxchord{G}{se~solnou~tyčí~slepec~~}\gtxchord{Dsus2}{plách}\\
+\gtxchord{C}{pod~víčky~škrábe~~}\gtxchord{D}{šelma~vrah}\\
+
+
+\textit{2.}\\
+
+Láska~je~solí~dolům~solnejm~hrozí~krach\\
+cukrářskej~učeň~s~jizvou~v~srdci~k~jiný~plách\\
+Láska~se~hojí~v~kleče,~mečem~v~palbě~pravd\\
+dej~mi~přízeň~zažeň~chlad\\
+
+
+\textit{R:}\\
+
+\gtxchord{G}{Hledám~lásku~a~~}\gtxchord{D}{klid~~~}\gtxchord{Am}{v~úpatí~tvejch~~}\gtxchord{C}{pyramid}\\
+\gtxchord{G}{dej~mi~lásku~a~}\gtxchord{D}{stín~upro}\gtxchord{Am}{střed~tvejch~}\gtxchord{C}{džín}\\
+\gtxchord{G}{Údolí~zválený~}\gtxchord{D}{uprostřed~}\gtxchord{Am}{tvejch~dlouhejch~}\gtxchord{C}{stínů}\\
+\gtxchord{}{údolí~zválený~}\gtxchord{Am}{tvejch~džín~~}\gtxchord{Em}{(tvejch~džín)}\\
+
+
+\textit{3. = 1.}\\
+
+\textit{R:}\\
+Až~k~vám~ty~zprávy~o~nás~dojdou\\
+ty~zprávy~z~dálnejch~moří~až~k~vám~dojdou\\
+Až~k~vám~ty~zprávy~v~láhvích~dojdou\\
+ty~zprávy~z~dálnejch~moří~až~k~vám~dojdou\\
+Až~k~vám~ty~zprávy~v~láhvích~dojdou\\
+že~sůl~se~lásce~dvoří~šelmám~v~klecích~přej~\\
+svobodu~go~go\\
+Až~k~vám~ty~zprávy~o~nás~dojdou\\
+ty~vůně~dálnejch~moří~kolem~projdou~jdou~jdou~...\\
+
+
+\textit{solo}\\
+
+
+\textit{R:}\\
+Hledám~lásku~a~klid~v~úpatí~tvejch~pyramid\\
+dej~mi~lásku~a~stín~uprostřed~tvejch~jeans\\
+Hledám~lásku~a~klid~máš~to~co~chci~mít\\
+v~tobě~lásko~můj~stín~chci~skrýt\\
+
+
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Danny Boy}
+\section*{Danny Boy}
+\index{Danny Boy}\typeout{Danny Boy}
+
+\gtxchord{}{Oh~Danny~boy,~the~}\gtxchord{C}{pipes,~the~pipes~are~}\gtxchord{F}{calling~}\\
+\gtxchord{}{From~glen~to~glen,~and~}\gtxchord{C}{down~the~mountain~}\gtxchord{G}{side~}\\
+\gtxchord{}{The~summer's~}\gtxchord{C}{gone,~and~all~the~roses~}\gtxchord{F}{falling~}\\
+\gtxchord{}{'Tis~you~must~go,~'tis~you~must~}\gtxchord{C}{go~and~}\gtxchord{G}{I~must~}\gtxchord{C}{bide~}\\
+
+
+\gtxchord{}{But~come}\gtxchord{C}{~ye~back~when~}\gtxchord{F}{summer's~in~the~}\gtxchord{C}{meadow~}\\
+\gtxchord{}{Or~when~the~}\gtxchord{Am}{valley's~hushed~and~}\gtxchord{F}{white~with~}\gtxchord{G}{snow~}\\
+\gtxchord{}{'Tis~I'll~be~}\gtxchord{C}{there~in~}\gtxchord{F}{sunshine~or~in~}\gtxchord{C}{shadow}\gtxchord{Am}{~}\\
+\gtxchord{}{Oh~Danny~boy,~oh~Danny~}\gtxchord{C}{boy,~I~}\gtxchord{G}{love~you~}\gtxchord{C}{so~}\\
+
+
+But~if~you~come,~and~all~the~flowers~are~dying~\\
+If~I~am~dead,~as~dead~I~may~well~be~\\
+You'll~come~and~find~the~place~where~I~am~lying~\\
+And~kneel~and~say~an~"Ave"~there~for~me~\\
+
+
+And~I~shall~hear,~tho'~soft~you~tread~above~me~\\
+And~all~my~grave~shall~warm~and~sweeter~be~\\
+If~you~will~bend~and~tell~me~that~you~love~me~\\
+Then~I~will~sleep~in~peace~until~you~come~to~me\\
+
+
+
+
+
+
+%
+%----- New Song -----
+
+
+%
+%----- New Song -----
+\addcontentsline{toc}{section}{?Dónde están los ladrones?}
+\section*{?Dónde están los ladrones?}
+\index{Donde estan los ladrones@?Dónde están los ladrones?}\typeout{?Dónde están los ladrones?}\index{Shakira!?Dónde están los ladrones?}\textit{Shakira}\\
+
+\gtxchord{}{Los~han~visto}\gtxchord{A}{~por~ahí}\\
+\gtxchord{}{Los~han~visto}\gtxchord{Bm}{~en~los~tejados}\\
+\gtxchord{}{Dando~vueltas~en~Pa}\gtxchord{D}{rís}\\
+\gtxchord{}{Condenando~en~los~juz}\gtxchord{E}{gados}\\
+
+\gtxchord{}{Con~la~nariz~empo}\gtxchord{A}{lvada}\\
+\gtxchord{}{De~corbat}\gtxchord{Bm}{a~o~de~blue~jeans}\\
+\gtxchord{}{Los~han~visto~en}\gtxchord{D}{~las~portadas~todas}\\
+\gtxchord{}{Sin~más~nada~que~de}\gtxchord{E}{cir}\\
+
+\textit{Chorus:}\\
+\gtxchord{}{Dónde~están~los~la}\gtxchord{Fm}{dro}\gtxchord{G$\sharp$}{nes}\gtxchord{A*}{}\\
+\gtxchord{}{Dónde~está~el~ase}\gtxchord{Fm}{sin}\gtxchord{G$\sharp$}{o}\gtxchord{A*}{}\\
+\gtxchord{}{Quizá~allá~revolcá}\gtxchord{Bm}{ndo}\gtxchord{C$\sharp$}{se~}\gtxchord{D*}{~~en~el~patio~del~vecino}\\
+\gtxchord{}{Y~qué~pasa~si~son~}\gtxchord{Fm}{ell}\gtxchord{G$\sharp$}{os}\gtxchord{A*}{}\\
+\gtxchord{}{Y~qué~pasa~si~soy~}\gtxchord{Fm}{yo}\gtxchord{G$\sharp$}{}\gtxchord{A*}{}\\
+\gtxchord{}{El~que~toca~esta~}\gtxchord{Bm}{gui}\gtxchord{C$\sharp$}{tarr}\gtxchord{D*}{a}\\
+\gtxchord{}{O~la~que~canta~e}\gtxchord{E}{sta~canción}\\
+\gtxchord{}{La~que~canta~e}\gtxchord{D}{sta~}\gtxchord{C$\sharp$}{canci}\gtxchord{Bm}{ón}\gtxchord{D}{}\gtxchord{C$\sharp$}{}\gtxchord{Bm}{}\\
+
+Los~han~visto~de~rodillas\\
+Sentados~o~de~cuclillas\\
+Parados~dando~lecciones\\
+En~todas~las~posiciones\\
+
+Predicando~en~las~iglesias\\
+Hasta~ofreciendo~conciertos\\
+Los~han~visto~en~los~cocteles~todos\\
+Repartiendo~ministerios\\
+
+\textit{Chorus}
+%
+%----- New Song -----
+
+
+
+%
+%----- New Song -----
+\addcontentsline{toc}{section}{Follow Me up to Carlow}
+\section*{Follow Me up to Carlow}
+\index{Follow Me up to Carlow}\typeout{Follow Me up to Carlow}
+
+\gtxchord{Em}{Lift~Mac~Cahir~Og~your~face,}\\
+\hspace*\fill ~brooding~o'er~the~\gtxchord{D}{old~disgrace~}\\
+\gtxchord{}{That~}\gtxchord{Em}{black~Fitzwilliam~stormed~your~place}\\
+\hspace*\fill and~drove~you~\gtxchord{D}{to~the~}\gtxchord{Em}{Fern.}\\
+\gtxchord{Em}{Gray~said~victory~was~sure,~soon~the~firebrand~}\gtxchord{D}{he'd~secure}\\
+\gtxchord{}{Un}\gtxchord{Em}{til~he~met~at~Glenmalure,~Fiach~Mac~}\gtxchord{D}{Hugh~O'}\gtxchord{Em}{Byrne}\\
+
+
+\textit{Chorus:}\\
+
+\gtxchord{Bm}{Curse~and~swear,~Lord~Kildare,~}\\
+\gtxchord{D}{Fiach~will~do~what~Feach~will~dare}\\
+\gtxchord{Bm}{Now~Fitzwilliam~have~a~care,~}\\
+\gtxchord{D}{fallen~is~your~}\gtxchord{Em}{star~low}\\
+\gtxchord{Bm}{Up~with~halbert,~out~with~sword,~}\\
+\gtxchord{D}{on~we~go~for~by~the~Lord}\\
+\gtxchord{Bm}{Fiach~Mac~Hugh~has~given~his~word:~}\\
+\gtxchord{D}{Follow~me~up~to~}\gtxchord{Em}{Carlow~}\\
+
+
+See~the~swords~of~Glen~Imayle\\
+\hspace*\fill flashing~o'er~the~English~Pale\\
+See~all~the~children~of~the~Gael,\\
+\hspace*\fill beneath~O'Byrne's~banners\\
+Rooster~of~the~fighting~stock,\\
+\hspace*\fill would~you~let~an~English~cock\\
+Crow~out~upon~an~Irish~rock,\\
+\hspace*\fill fly~up~and~teach~him~manners\\
+
+\textit{Chorus:}\\
+
+
+From~Tassagart~to~Clonmore~flows~a~stream~of~Saxon~Gore\\
+Great~is~Rory~Og~O'More~at~sending~loons~to~Hades.\\
+White~is~sick~and~Lane~is~fled,~now~for~black~Fitzwilliams~head\\
+We'll~send~it~over,~dripping~red,~to~Liza~and~her~ladies\\
+
+\textit{Chorus:}\\
+
+
+%
+%----- New Song -----
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Gyongháju Lány}
+\section*{Gyongháju Lány}
+\index{Gyongháju Lány}\typeout{Gyongháju Lány}\index{Omega!Gyongháju Lány}\textit{Omega}\\
+
+
+\textit{4x:}\\\hspace*{5mm}\gtxchord{Fm~Eb~Bbm~Fm}{}\\
+\textit{2x:}\\\hspace*{5mm}\gtxchord{G$\sharp$~Eb~Bbm~Fm}{}\\
+
+\textit{Verse:}\\
+
+\gtxchord{Fm}{Egyszer~a~n}\gtxchord{E$\flat$}{ap~}\gtxchord{B$\flat$m}{Úgy~elfára}\gtxchord{Fm}{dt,}\\
+\gtxchord{Fm}{Elaludt~mé}\gtxchord{E$\flat$}{ly,~}\gtxchord{B$\flat$m}{Zöld~tó~öl}\gtxchord{Fm}{én,~}\\
+Az~embereknek~Fájt~a~sötét,~\\
+O~megsajnált,~Eljött~közénk~\\
+
+\textit{Chorus:}\\
+
+\gtxchord{}{Igen,~}\gtxchord{G$\sharp$}{jött~egy~gyöngyhajú~}\gtxchord{E$\flat$}{lány,}\\
+\gtxchord{B$\flat$m}{Álmodtam,~vagy~igaz~}\gtxchord{Fm}{talán,}\\
+\gtxchord{G$\sharp$}{Így~lett~a~föld,~az~}\gtxchord{E$\flat$}{ég~}\\
+\gtxchord{B$\flat$m}{Zöld~meg~kék,~mint~}\gtxchord{Fm}{rég.}\\
+
+
+\section*{Dívka s perlami ve vlasech}
+\index{Dívka s perlami ve vlasech}\typeout{Dívka s perlami ve vlasech}\index{Aleš Brichta!Dívka s perlami ve vlasech}
+\textit{Aleš Brichta}\\
+
+\textit{1. }\\
+Zas~mě~tu~máš,~nějak~se~mračíš,\\
+vybledlej~smích~už~ve~dveřích,\\
+s~čelenkou~z~perel~svatozář~ztrácíš,\\
+kolik~se~platí~za~vláčnej~hřích.\\
+
+\textit{R:}\\
+No~tak,~lásko,~co~chceš~mi~říct,\\
+máš~už~perly,~možná~i~víc,\\
+lásko,~na~co~se~ptáš, svíčku~zhasínáš.\\
+
+Nemám,~lásko,~co~bych~ti~dal, \\
+chtělas~všechno, nebyl~jsem~král,\\
+lásko,~na~co~se~ptáš, \\
+perly~ve~vlasech~máš.\\
+
+\textit{2. }\\
+Tvý~horký~rty,~víc~radši~ne,\\
+nejsou~už~mý,~nejsi~má~Cher,\\
+něco~snad~chápu,~to~ne,~to~ne,\\
+bolí~to,~hořím,~jak~černej~tér.\\
+
+No~tak,~lásko,~kdo~mi~tě~vzal,\\
+komus~dala~tělo~i~duši,\\
+lásko,~na~co~je~pláč,\\
+když~to~skončit~má.\\
+
+Vždyť~už,~lásko,~svý~perly~máš,\\
+tak~proč~padaj,~měněj~se~v~slzy,\\
+lásko,~na~co~je~pláč,\\
+perly~ve~vlasech~máš.\\
+
+No~tak,~lásko,~co~chceš~mi~říct,~...\\
+
+\textit{3. }\\
+Chtěla~jsi~víc~pro~svoje~touhy,\\
+já,~chudej~princ,~mám,~jen~co~mám,\\
+co~vlastně~zbývá,~jen~slzy~pouhý\\
+ze~svatebních~zvonů,~z~nebeskejch~bran.\\
+
+No~tak,~lásko,~kdo~mi~tě~vzal,~...\\
+
+No~tak,~lásko,~co~chceš~mi~říct,~...\\
+
+\addcontentsline{toc}{section}{René, já a Rudolf}
+\section*{René, já a Rudolf}
+\index{René, já a Rudolf}\typeout{René, já a Rudolf}\index{Jiří Schellinger!René, já a Rudolf}\textit{Jiří Schellinger}\\
+
+
+\gtxchord{G}{Nedělní~odpoledne~}\gtxchord{Am}{stane~se~}\gtxchord{C}{pro~mnohé~chvílí~}\gtxchord{G}{volna,}\\
+\gtxchord{G}{někdo~si~běhá~jen~tak~}\gtxchord{Am}{po~lese,~}\gtxchord{C}{jiný~zas~chodí~}\gtxchord{G}{zvolna.}\\
+\gtxchord{G7}{My~však~neznáme~rozkoš~}\gtxchord{C}{oddychu~}\gtxchord{Cm7}{a~sportujeme~v~}\gtxchord{G}{houfu,}\\
+\gtxchord{G}{nikde~nejmenší~známky~}\gtxchord{Am}{po~břichu,~}\gtxchord{C}{my~propadli~jsme~}\gtxchord{G}{golfu.}\\
+
+
+\gtxchord{G}{René,~já~a~Rudolf~chodíváme~na~golf,}\\
+\gtxchord{Am}{René,~já~a~Rudolf~}\gtxchord{D7}{chodíváme~na~golf,}\\
+\gtxchord{G}{René,~já~a~Rudolf~chodíváme~na~golf,}\\
+\gtxchord{Am}{René,~já~a~Rudolf~}\gtxchord{D7}{chodíváme~na~golf.}\\
+
+
+Nedělní~odpoledne~stane~se~pro~mnohé~chvílí~nudy,\\
+někdo~to~pomyšlení~nesnese~a~tak~jde~válet~sudy.\\
+Věřte,~že~nás~už~vůbec~nevábí~ve~tvářích~dívek~důlky,\\
+můžou~mít~vlasy~jako~hedvábí~nám~stačí~řádné~hůlky.\\
+
+
+René,~já~a~Rudolf,~chodíváme~na~golf,\\
+René,~já~a~Rudolf,~chodíváme~na~golf,\\
+René,~já~a~Rudolf,~chodíváme~na~golf,\\
+René,~já~a~Rudolf,~chodíváme~na~golf.\\
+
+
+\newpage\addcontentsline{toc}{section}{Griechischer Wein}
+\section*{Griechischer Wein}
+\index{Griechischer Wein}\typeout{Griechischer Wein}\index{Udo Jürgens!Griechischer Wein}\textit{Udo Jürgens}\\
+
+\textit{1.}\\
+
+\gtxchord{}{Es~war~schon~}\gtxchord{Cm}{dunkel,}
+\\~als~ich~durch~die~Vorstadtstraßen~\gtxchord{G$\sharp$}{heim}\gtxchord{A$\sharp$}{wärts~}\gtxchord{D$\sharp$}{ging.~}\\
+\gtxchord{}{Da~war~ein~Wirtshaus,}\\
+~aus~dem~das~Licht~noch~auf~den~\gtxchord{Fm}{Gehsteig~}\gtxchord{A$\sharp$}{schien.}\\
+\gtxchord{}{Ich~hatte~}\gtxchord{Cm}{Zeit~und~mir~war~}\gtxchord{G7}{kalt,~drum~trat~ich~}\gtxchord{Cm}{ein.~}\\
+\gtxchord{}{Da~saßen~Männer~mit~braunen~Augen}\\
+und~mit s\gtxchord{G$\sharp$}{chwarz}\gtxchord{A$\sharp$}{em~H}\gtxchord{D$\sharp$}{aar~},\\
+\gtxchord{}{und~aus~der~Jukebox}\\
+~erklang~Musik~die~fremd~und \gtxchord{Fm}{südlich~}\gtxchord{A$\sharp$}{war.~}\\
+\gtxchord{}{Als~man~mich~}\gtxchord{Cm}{sah,~stand~einer~}\gtxchord{G7}{auf~und~lud~mich~}\gtxchord{Cm}{ein.~}\\
+
+
+\textit{R:}\\
+
+\gtxchord{G$\sharp$}{Griechischer~Wein~ist~so~wie~das~Blut~der~Erde,~}\\
+\gtxchord{D$\sharp$}{komm~schenk~dir~ein,~}\gtxchord{}{und~wenn~ich~dann~traurig~werde~}\\
+\gtxchord{A$\sharp$7}{liegt~es~daran,~}\gtxchord{}{dass~ich~immer~träume~von~}\gtxchord{D$\sharp$}{daheim,}\\
+~du~musst~ver\gtxchord{D$\sharp$7}{zeihn.~}\\
+\gtxchord{G$\sharp$}{Griechischer~Wein~und~die~altvertrauten~Lieder,}\\
+~sc\gtxchord{D$\sharp$}{henk~noch~mal~ein,~}\gtxchord{}{denn~ich~fühl~die~Sehnsucht~wieder,~}\\
+\gtxchord{A$\sharp$7}{in~dieser~Stadt~}\gtxchord{}{werd~ich~immer~nur~ein~Fremder~}\gtxchord{Cm}{sein,~}\\
+\gtxchord{G7}{---~und~al}\gtxchord{Cm}{lein.~}\\
+
+\textit{2.}\\
+Und~dann~erzählten\\
+sie~mir~von~grünen~Hügeln, Meer~und~Wind,~\\
+von~alten~Häusern\\
+und~jungen~Frauen,~die~alleine~sind~\\
+und~von~dem~Kind,~das~seinen~Vater~noch~nie~sah.~\\
+Sie~sagten~sich\\
+immer~wieder~irgendwann~geht~es~zurück,~\\
+und~das~Ersparte\\
+genügt~zu~Hause~für~ein~kleines~Glück,~\\
+und~bald~denkt~keiner~mehr~daran,~wie~es~hier~war.~\\
+
+\textit{R:}
+
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Hallelujah}
+\section*{Hallelujah}
+\index{Hallelujah}\typeout{Hallelujah}\index{Leonard Cohen!Hallelujah}\textit{Leonard Cohen}\\
+
+
+\gtxchord{C}{}\gtxchord{Am}{}\gtxchord{C}{}\gtxchord{Am}{}\\
+
+
+\gtxchord{}{Now~I've~}\gtxchord{C}{heard~there~was~a~}\gtxchord{Am}{secret~chord~}\\
+\gtxchord{}{That~}\gtxchord{C}{David~played,~and~it~}\gtxchord{Am}{pleased~the~Lord~}\\
+\gtxchord{}{But~}\gtxchord{F}{you~don't~really~}\gtxchord{G}{care~for~music,~do~}\gtxchord{C}{you?~}\gtxchord{F}{}\gtxchord{G}{}\\
+\gtxchord{C}{It~goes~like~this~}\\
+\gtxchord{}{The~}\gtxchord{F}{fourth,~the~}\gtxchord{G}{fifth~}\\
+\gtxchord{}{The~}\gtxchord{Am}{minor~fall,~the~}\gtxchord{G}{major~lift~}\\
+\gtxchord{}{The~}\gtxchord{E7}{baffled~king~composing~Halle}\gtxchord{Am}{lujah~}\\
+\gtxchord{F}{Hallelujah~}\gtxchord{Am}{Hallelujah~}\\
+\gtxchord{F}{Hallelujah~}\gtxchord{Am}{Halle}\gtxchord{G}{lu-}\gtxchord{C}{jah~}\\
+
+
+Your~faith~was~strong~but~you~needed~proof~\\
+You~saw~her~bathing~on~the~roof~\\
+Her~beauty~and~the~moonlight~overthrew~her~\\
+She~tied~you~\\
+To~a~kitchen~chair~\\
+She~broke~your~throne,~and~she~cut~your~hair~\\
+And~from~your~lips~she~drew~the~Hallelujah~\\
+
+
+Hallelujah,~Hallelujah~\\
+Hallelujah,~Hallelujah~\\
+
+
+You~say~I~took~the~name~in~vain~\\
+I~don't~even~know~the~name~\\
+But~if~I~did,~well~really,~what's~it~to~you?~\\
+There's~a~blaze~of~light~\\
+In~every~word~\\
+It~doesn't~matter~which~you~heard~\\
+The~holy~or~the~broken~Hallelujah~\\
+
+
+Hallelujah,~Hallelujah~\\
+Hallelujah,~Hallelujah~\\
+
+
+I~did~my~best,~it~wasn't~much~\\
+I~couldn't~feel,~so~I~tried~to~touch~\\
+I've~told~the~truth,~I~didn't~come~to~fool~you~\\
+And~even~though~\\
+It~all~went~wrong~\\
+I'll~stand~before~the~Lord~of~Song~\\
+With~nothing~on~my~tongue~but~Hallelujah~\\
+
+
+Hallelujah,~Hallelujah~\\
+Hallelujah,~Hallelujah~\\
+
+
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Ironic}
+\section*{Ironic}
+\index{Ironic}\typeout{Ironic}\index{Alanis Morissette!Ironic}\textit{Alanis Morissette}\\
+
+
+\gtxchord{G}{An~o}\gtxchord{C}{ld~m}\gtxchord{G}{an~turned~nine}\gtxchord{Am}{ty-eight}\\
+\gtxchord{}{he~won~the~}\gtxchord{G}{lotte}\gtxchord{C}{ry~and~}\gtxchord{G}{died~the~next~d}\gtxchord{Am}{ay.}\\
+
+
+It's~a~black~fly~in~your~chardonnay,\\
+it's~a~death~row~pardon~two~minutes~to~late.\\
+Isn't~it~ironic...~don't~you~think?\\
+
+
+\textit{chorus:}\\
+
+\gtxchord{}{It's~like~}\gtxchord{G}{rain~}\gtxchord{C}{on~your}\gtxchord{G}{~wedding~day,}\gtxchord{Am}{}\\
+
+it's~a~free~ride~when~you've~already~paid,\\
+
+it's~the~good~advice~that~you~just~didn't~take,\\
+
+\gtxchord{B$\flat$}{who~would~have~th}\gtxchord{F}{ought...~it~}\gtxchord{G}{figures.}\\
+
+
+Mr.~play-it-safe~was~afraid~to~fly,\\
+he~packed~his~suitcase~and~kissed~his~kids~good-bye.\\
+He~waited~his~whole~damn~life~just~to~take~that~flight\\
+and~as~the~plane~crashed~down\\
+\hspace*\fill ~he~thought~"well~isn't~this~nice...".
+And~isn't~it~ironic...~don't~you~think?\\
+
+
+\gtxchord{}{Well~}\gtxchord{F}{life~has~a~funny~way~of~sneaking~}\gtxchord{G}{up~on~you,}\\
+\gtxchord{}{when~}\gtxchord{F}{you~think~everything~is~okay}\\
+~and~\gtxchord{G}{everything's~going~right.}\\
+\gtxchord{}{And~l}\gtxchord{F}{ife~has~a~funny~way~of~helping~yo}\gtxchord{G}{u~out}\\
+when\gtxchord{}{you~t}\gtxchord{F}{hink~everything's~gone~wrong}\\
+and~everything~blows~up~in~your~face.\\
+
+A~traffic~jam~when~you~are~already~late,\\
+a~no-smoking~sign~on~your~cigarette~break.\\
+It's~like~ten~thousand~spoons~when~all~you~need~is~a~knife,\\
+it's~like~meeting~the~man~of~my~dreams~then~meeting~his~beautiful~wife.\\
+And~isn't~it~ironic...~don't~you~think?\\
+a~little~too~ironic...~and~yeah~i~really~do~think...\\
+
+\gtxchord{}{L}\gtxchord{C}{ife~has~a~funny~way~of~sneaking~up~on}\gtxchord{G}{~you,}\\
+\gtxchord{}{l}\gtxchord{C}{ife~has~a~funny,~funny~way~~of~helpi}\gtxchord{G}{ng~you~out}\\
+\gtxchord{C}{--~helping~you~out.}\\
+
+
+%
+%----- New Song -----
+
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Jim Bridger}
+\section*{Jim Bridger}
+\index{Jim Bridger}\typeout{Jim Bridger}\index{Johnny Horton!Jim Bridger}\textit{Johnny Horton}\\
+
+
+\textit{1.}\\
+
+\gtxchord{Am}{Once~there~was~a~mountain~man}\\
+who~couldn’t~write~his~name,\\
+\gtxchord{}{yet~he~deserves~a~front~row~seat}\\
+~in~\gtxchord{Dm}{history’s~hall~of~fame.}\\
+\gtxchord{}{He~for}\gtxchord{Am}{got~more~about~the~Indians}\\
+than~\gtxchord{Dm}{we~will~ever~know,}\\
+\gtxchord{}{he~}\gtxchord{Am}{spoke~the~language~of~the~Sioux~-~-}\\
+\gtxchord{}{the~}\gtxchord{E}{Blackfoot~and~the~}\gtxchord{Am}{Crow.}\\
+
+
+\textit{ }\\
+\gtxchord{}{Let’s~}\gtxchord{A}{drink~to~old~Jim~Bridger,~yes,~}\gtxchord{E}{lift~your~glasses~high,}\\
+\gtxchord{}{as~long~as~there’s~a~USA,~don’t~}\gtxchord{E7}{let~his~memory~}\gtxchord{A}{die.}\\
+\gtxchord{}{That~he~was~making~history,~never~}\gtxchord{A7}{once~occurred~to~}\gtxchord{D}{him,}\\
+\gtxchord{}{but~I~}\gtxchord{E}{doubt~if~we’d~a~been~here,~if~it}\gtxchord{E7}{~weren’t~for~men~like~}\gtxchord{Am}{Jim.}\\
+
+
+\textit{2. }\\
+He~spoke~with~General~Custer\\
+and~said,~“Listen,~Yellow~Hair,\\
+the~Sioux~were~a~great~nation,\\
+so~treat~them~fair~and~square.\\
+Sit~in~on~their~war~council,\\
+don’t~laugh~away~their~pride,\\
+but~Custer~didn’t~listen,\\
+at~Little~Big~Horn~Custer~died.\\
+
+
+\textit{3. }\\
+There’s~poems~and~there’s~legends\\
+that~tell~of~Carson’s~fame,\\
+yet~compared~to~Jim~Bridger,\\
+Kit~was~civilized~and~tame.\\
+These~words~are~straight~from~Carson’s~lips,\\
+if~you~place~such~store~by~him,\\
+if~there’s~a~man~who~knows~~this~gun~–\\
+forsaken~land~it’s~Jim.
+
+%
+%----- New Song -----
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Šípková Růženka}
+\section*{Šípková Ruženka}
+\index{Szipkova Ruzenka@Šípková Růženka}\typeout{Šípková Ruženka}\index{Jiří Schellinger!Šípková Růženka}\textit{Jiří Schellinger}\\
+
+
+\textit{1.}\\
+\gtxchord{}{Ještě~}\gtxchord{Gm}{spí~a~spí~a~spí~zámek~}\gtxchord{F}{šípkový}\\
+\gtxchord{Gm}{žádný~princ~tam~v~lesích,~}\gtxchord{Dm}{ptáky~neloví}\\
+
+Ještě~spí~a~spí~a~spí~dívka~zakletá\\
+
+u~lůžka~jí~planá~růže~rozkvétá\\
+
+\gtxchord{B}{To~se~}\gtxchord{C}{schválně~dětem~}\gtxchord{Gm}{říká}\\
+\gtxchord{D$\sharp$}{aby~s~}\gtxchord{F}{důvěrou~šli~}\gtxchord{B}{spát,klidně~}\gtxchord{Dm}{spát,}\\
+\gtxchord{}{že~se~}\gtxchord{Gm}{dům~probou}\gtxchord{F}{zí}\\
+\gtxchord{}{a~ta~}\gtxchord{B}{kráska~proci}\gtxchord{D$\sharp$}{tá}\\
+\gtxchord{}{Zatím~}\gtxchord{Cm}{spí~tam~}\gtxchord{Dm}{dál,~spí~tam~v~}\gtxchord{Gm}{růžích.}\\
+
+
+\textit{2.}\\
+Kdo~jí~ústa~k~ústum~dá,~kdo~ji~zachrání\\
+kdo~si~dívku~pobledlou~vezme~za~paní.\\
+Vyjdi~zítra~za~ní~a~nevěř~pohádkám\\
+žádny~princ~už~není,~musíš~tam~jít~sám.\\
+
+
+To~se~schválně~dětem~říká\\
+aby~s~důvěrou~šli~spát,~klidně~spát\\
+že~se~dům~probouzí~a~ta~kráska~procitá\\
+Zatím~spí~tam~dál,~spí~v~růžích.\\
+
+
+\gtxchord{Gm}{Musíš~přijít~}\gtxchord{F}{sám,}\\
+\gtxchord{}{nesmíš~}\gtxchord{B}{věřit~pohád}\gtxchord{D$\sharp$}{kam}\\
+\gtxchord{Cm}{čeká~dívka~}\gtxchord{F}{dál,~spí~tam~v~}\gtxchord{Gm}{růžích,}\\
+\gtxchord{Cm}{čeká~dívka~}\gtxchord{F}{dál,~spí~tam~v~}\gtxchord{Gm}{růžích.}\\
+
+
+
+
+%
+%----- New Song -----
+\addcontentsline{toc}{section}{Smoke on the Water}
+\section*{Smoke on the Water}
+\index{Smoke on the Water}\typeout{Smoke on the Water}\index{Deep Purple!Smoke on the Water}\textit{Deep Purple}\\
+
+\textit{6x:}\\
+\hspace*{5mm}\gtxchord{A~C~D~A~C~Eb~A~C~D~C~A}{}
+
+\gtxchord{}{We~}\gtxchord{Am}{all~came~out~to~montreux}\\
+\gtxchord{}{On~the~l}\gtxchord{C}{ake~gen}\gtxchord{D}{eva~s}\gtxchord{Am}{horeline}\\
+\gtxchord{Am}{To~make~records~with~a~mobile}\\
+\gtxchord{}{We~d}\gtxchord{C}{idn't~h}\gtxchord{D}{ave~much~}\gtxchord{Am}{time}\\
+\gtxchord{Am}{Frank~zappa~and~the~mothers}\\
+\gtxchord{}{Were~}\gtxchord{C}{at~the~best~pl}\gtxchord{D}{ace~a}\gtxchord{D}{round}\\
+\gtxchord{Am}{But~some~stupid~with~a~flare~gun}\\
+\gtxchord{C}{Burned~the~place~}\gtxchord{D}{to~the~}\gtxchord{Am}{ground}\\
+\gtxchord{D}{Smoke~on~the~w}\gtxchord{F}{ater,}\gtxchord{Am}{~fire~}\gtxchord{C}{in~the~}\gtxchord{Am}{sky}\\
+\gtxchord{D}{Smoke~on~the~w}\gtxchord{F}{ater...}\\
+
+
+\textit{2x Riff:}\\
+
+
+They~burned~down~the~gambling~house\\
+It~died~with~an~awful~sound\\
+Funky~claude~was~running~in~and~out\\
+Pulling~kids~out~the~ground\\
+When~it~all~was~over\\
+We~had~to~find~another~place\\
+But~swiss~time~was~running~out\\
+It~seemed~that~we~would~lose~the~race\\
+Smoke~on~the~water,~fire~in~the~sky\\
+
+
+We~ended~up~at~the~grand~hotel\\
+It~was~empty~cold~and~bare\\
+But~with~the~rolling~truck~stones~thing~just~outside\\
+Making~our~music~there\\
+With~a~few~red~lights~and~a~few~old~beds\\
+We~make~a~place~to~sweat\\
+No~matter~what~we~get~out~of~this\\
+I~know~we'll~never~forget\\
+Smoke~on~the~water,~fire~in~the~sky\\
+
+
+
+
+%
+%----- New Song -----
+\addcontentsline{toc}{section}{The Last Unicorn}
+\section*{The Last Unicorn}
+\index{The Last Unicorn}\typeout{The Last Unicorn}\index{America!The Last Unicorn}\textit{America}\\
+
+
+\gtxchord{}{When~the~}\gtxchord{Am}{last~eagle~flies~over~the~}\gtxchord{F}{last~crumbling~}\gtxchord{G}{mountain}\\
+\gtxchord{}{And~the~}\gtxchord{Am}{last~lion~roars~at~the~}\gtxchord{F}{last~dusty~}\gtxchord{G}{fountain}\\
+\gtxchord{}{In~the~}\gtxchord{Am}{shadow~of~the~}\gtxchord{Em}{forest,~though~she~}\gtxchord{F}{may~be~old~and~}\gtxchord{C}{worn}\\
+\gtxchord{}{They~will~}\gtxchord{F}{stare~un}\gtxchord{C}{believing} \gtxchord{}{at~the~}\gtxchord{F}{last~uni}\gtxchord{G}{corn~}\gtxchord{N.C.}{}\\
+
+When~the~first~breath~of~winter\\
+\hspace*\fill through~the~flowers~is~icing\\
+And~you~look~to~the~north~and~a~pale~moon~is~rising\\
+And~it~seems~like~all~is~dying\\
+\hspace*\fill and~would~leave~the~world~to~mourn\\
+In~the~distance~hear~her~laughter of~the~last~unicorn\\
+
+
+\gtxchord{}{I'm~a}\gtxchord{C}{li}\gtxchord{Am}{ve--------I'm~a}\gtxchord{G}{live}\gtxchord{Am}{}\gtxchord{Em}{}\gtxchord{F}{}\gtxchord{G}{}\\
+
+
+When~the~last~moon~is~cast~over~the~last~star~of~morning\\
+And~~the~future~is~past\\
+\hspace*\fill without~even~a~last~desperate~warning\\
+Then~look~into~the~sky\\
+\hspace*\fill where~through~the~clouds~a~path~is~formed\\
+Look~and~see~her~how~she~sparkles It's~the~last~unicorn\\
+
+
+\gtxchord{}{I'm~a}\gtxchord{C}{live-}\gtxchord{Am}{-------I'm~a}\gtxchord{G}{live}\gtxchord{C}{---}\gtxchord{Am7}{-----------I'm~}\gtxchord{G}{aliv}\gtxchord{Am}{e}\gtxchord{Em}{}\gtxchord{F}{}\gtxchord{G}{}
+
+\gtxchord{Am}{}\gtxchord{Em}{}\gtxchord{F}{}\gtxchord{G}{}\\
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Whiskey In The Jar}
+\section*{Whiskey In The Jar}
+\index{Whiskey In The Jar}\typeout{Whiskey In The Jar}
+
+
+
+\gtxchord{Am}{}\gtxchord{G}{}\gtxchord{Em}{}\\
+
+
+\textit{1. }\\
+\gtxchord{}{As~I~}\gtxchord{G}{was~goin'~over,~the~Cork~and~Ke}\gtxchord{Em}{rry~mountains~}\\
+\gtxchord{}{I~sa}\gtxchord{C}{w~Captain~Farrell,~and~his~money~he~was~c}\gtxchord{G}{ountin'~}\\
+\gtxchord{}{I~fi}\gtxchord{G}{rst~produced~my~pistol,~and~then~produced~m}\gtxchord{Em}{y~rapier~}\\
+\gtxchord{}{I~said~stan}\gtxchord{C}{d~and~deliver,~or~the~devil~he~may~ta}\gtxchord{G}{ke~ya~~}\\
+
+
+\textit{R:}\\
+\gtxchord{}{Musha~ring~d}\gtxchord{D}{um~a~do~dum~a~dah~}\\
+\gtxchord{C}{Whack~for~my~daddy-o~}\\
+
+
+Whack~for~my~daddy-o~\\
+\gtxchord{}{There's~whisk}\gtxchord{G}{ey~in~the~jar-o~~}\\
+
+
+\textit{2.}\\
+I~took~all~of~his~money,~and~it~was~a~pretty~penny~\\
+I~took~all~of~his~money,~and~I~brought~it~home~to~Molly~\\
+She~swore~that~she~loved~me,~never~would~she~leave~me~\\
+But~the~devil~take~that~woman,~for~you~know\\
+\hspace*\fill she~tricked~me~easy~~\\
+
+\textit{R:}\\
+Musha~ring~dum~a~do~dum~a~dah~\\
+Whack~for~my~daddy-o~\\
+Whack~for~my~daddy-o~\\
+There's~whiskey~in~the~jar-o~~\\
+
+
+\textit{3.}\\
+Being~drunk~and~weary,~I~went~to~Molly's~chamber~\\
+Takin'~my~money~with~me,~and~I~never~knew~the~danger~\\
+For~about~six~or~maybe~seven,~in~walked~Captain~Farrell~\\
+I~jumped~up,~fired~off~my~pistols,\\
+\hspace*\fill and~I~shot~him~with~both~barrels~~\\
+
+
+\textit{R:}\\
+Musha~ring~dum~a~do~dum~a~dah~\\
+Whack~for~my~daddy-o~\\
+Whack~for~my~daddy-o~\\
+There's~whiskey~in~the~jar-o~~\\
+
+
+\textit{4.}\\
+Now~some~men~like~the~fishin',~and~some~men~like~the~fowlin'~\\
+And~some~men~like~ta~hear,~a~cannon~ball~a~roarin'~\\
+But~me~I~like~sleepin',~specially~in~my~Molly's~chamber~\\
+But~here~I~am~in~prison,~here~I~am~with~a~ball~and~chain~yeah~~\\
+
+
+\textit{R:}\\
+Musha~ring~dum~a~doo~dum~a~da~\\
+Whack~for~my~daddy-o~\\
+Whack~for~my~daddy-o~\\
+There's~whiskey~in~the~jar-o~~\\
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Líbám tě černou}
+\section*{Líbám tě černou}
+\index{Líbám tě černou}\typeout{Líbám tě černou}\index{BSP!Líbám tě černou}\textit{BSP}\\
+
+
+Emi~G~Ami~C~2x\\
+
+
+\gtxchord{Emi}{Líbám~tě~}\gtxchord{G}{černou,~}\gtxchord{Ami}{můru~}\gtxchord{C}{zlou,}\\
+\gtxchord{Emi}{mým~světem~}\gtxchord{G}{kroužíš,~}\gtxchord{Ami}{hrou~jsi~}\gtxchord{C}{hrou,~ou~ou~}\gtxchord{G}{jéé.}\\
+\gtxchord{}{Ústy~}\gtxchord{Ami}{ďábla~dítě,}\gtxchord{C}{~pýcha~}\gtxchord{D}{osloví~tě,}\\
+\gtxchord{G}{zář~}\gtxchord{Ami}{tvou~je~maskou,~}\gtxchord{C}{hotel~}\gtxchord{D}{Underground.}\\
+
+
+Líbám~tě~černou,~můru~zlou,\\
+zády~se~točíš~za~duhou.\\
+Ústy~ďábla~dítě,~pýcha~osloví~tě,\\
+zář~zlou~je~maskou,~šeptáš,~hladíš,~křičíš~baby.\\
+
+
+G~Ami~C~D~2x\\
+
+
+\gtxchord{Emi}{Líbám~}\gtxchord{G}{černou,~}\gtxchord{Ami}{můru~}\gtxchord{C}{zlou,}\\
+\gtxchord{Emi}{křídly~se~}\gtxchord{G}{točí~}\gtxchord{Ami}{za~du}\gtxchord{C}{hou,~jei~jei~}\gtxchord{G}{jéé.}\\
+\gtxchord{}{Tvář~}\gtxchord{Ami}{ďábla~dítě,}\gtxchord{C}{~sám~}\gtxchord{D}{osloví~tě,}\\
+\gtxchord{Emi}{Líbám~tě~}\gtxchord{G}{černou,~jé,~}\gtxchord{Ami}{můru~}\gtxchord{C}{zlou,}\\
+\gtxchord{G}{Tvář~}\gtxchord{Ami}{ďábla~dítě,~}\gtxchord{C}{sám~teď~}\gtxchord{D}{osloví~tě,}\\
+\gtxchord{G}{zář~}\gtxchord{Ami}{zlou~je~maskou,~}\gtxchord{C}{hotel~}\gtxchord{D}{Undergro}\gtxchord{Emi}{und~}\gtxchord{G}{jé}\gtxchord{Ami}{ééé~}\gtxchord{C}{ééé}\\
+
+
+Emi~G~Ami~C~3x\\
+
+
+Ústa~ďábla~dítě,~jé~láskou~osloví~tě,\\
+zář~zlou~je~maskou,~kroužíš,~šeptáš,~křičíš~baby.\\
+
+
+/~Z~křídel~pláč,~proč~dál~nehledáš,\\
+~~hledáš~a~dál~to~nejde,~hledáš,~proklínáš~/\\
+
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Telegraph road}
+\section*{Telegraph road}
+\index{Telegraph road}\typeout{Telegraph road}\index{Dire Straits!Telegraph road}\textit{Dire Straits}\\
+
+
+\gtxchord{}{A~}\gtxchord{F}{long~time~ago~came~a~}\gtxchord{Dm}{man~on~a~track}\\
+\gtxchord{C}{walking~thirty~miles~with~a~}\gtxchord{B$\flat$}{sack~on~his~back}\gtxchord{F}{}\\
+\gtxchord{}{and~he~}\gtxchord{B$\flat$}{put~down~his~load~}\gtxchord{C}{where~he~}\gtxchord{F}{thought~it~was~the~best}\gtxchord{C7}{}\\
+\gtxchord{B$\flat$}{he~made~a~home~in~the~wild}\gtxchord{Gm7}{erness}\gtxchord{B$\flat$}{}\\
+\gtxchord{F}{he~built~a~}\gtxchord{Dm}{cabin~and~a~winter~store}\\
+\gtxchord{}{and~he~}\gtxchord{C}{ploughed~up~the~ground~}\gtxchord{Am}{by~the~}\gtxchord{B$\flat$}{cold~lake~shore}\gtxchord{F}{}\\
+\gtxchord{B$\flat$}{and~the~other~}\gtxchord{C}{travellers~came~}\gtxchord{F}{riding~down~the~}\gtxchord{C}{track}\\
+\gtxchord{}{and~they~}\gtxchord{B$\flat$}{never~went~further~}\gtxchord{F/A}{and~they~}\gtxchord{Gm7}{never~went~back}\gtxchord{B$\flat$}{}\\
+\gtxchord{F}{then~came~the~churches~}\gtxchord{Dm}{then~came~the~schools}\\
+\gtxchord{C}{then~came~the~lawyers~}\gtxchord{B$\flat$}{then~came~the~rules}\gtxchord{F}{}\\
+\gtxchord{B$\flat$}{then~came~the~}\gtxchord{Csus4}{trains~and~}\gtxchord{C}{the~}\gtxchord{F}{trucks~with~their~}\gtxchord{C}{loads}\\
+\gtxchord{}{and~the~}\gtxchord{B$\flat$}{dirty~old~track}\gtxchord{B$\flat$}{~~~was~the~telegraph~road}\gtxchord{Dm}{}\\
+
+
+\gtxchord{F}{Then~came~the~mines~-~}\gtxchord{Dm}{then~came~the~ore}\\
+\gtxchord{C}{then~there~was~the~hard~times~}\gtxchord{B$\flat$}{then~there~was~}\gtxchord{B$\flat$}{a~~~}\gtxchord{F}{war}\\
+\gtxchord{B$\flat$}{telegraph~sang~a~}\gtxchord{C}{song~a}\gtxchord{F}{bout~the~world~out}\gtxchord{C7}{side}\\
+\gtxchord{B$\flat$}{telegraph~road~got~so~}\gtxchord{Gm7}{deep~and~so~wide}\\
+\gtxchord{B$\flat$}{like~a~rolling~}\gtxchord{F}{river.~.~.}\\
+
+
+\textit{solo}\\
+
+
+
+
+\gtxchord{D}{~~~~~}\gtxchord{D7/F$\sharp$}{And~my~}\gtxchord{G}{radio~says~tonight~it's~gonna~freeze}\\
+\gtxchord{Dm}{people~driving~home~from~the~factories}\\
+\gtxchord{}{there's~}\gtxchord{C}{six~lanes~of~traffic}\\
+\gtxchord{Am}{~~~~~three~lanes~moving~}\gtxchord{Dm}{slow.~.~.}\\
+
+
+\textit{solo}\\
+
+
+
+
+\gtxchord{C}{~~~I~used~to~}\gtxchord{F}{like~to~go~to~work~but~they~}\gtxchord{Dm}{shut~it~down}\\
+\gtxchord{}{~~~I've~got~a~}\gtxchord{C}{right~to~go~to~work~but~there's~no~}\\
+\hspace*\fill \gtxchord{B$\flat$}{work~here~to~be~found}\\
+\gtxchord{}{~~~}\gtxchord{F}{yes~and~they~}\gtxchord{B$\flat$}{say~we're~gonna~have~}\gtxchord{C}{to~pay~}\gtxchord{F}{what's~owed}\gtxchord{C7}{}\\
+\gtxchord{}{~~~we're~}\gtxchord{B$\flat$}{gonna~have~to~reap~from~}\gtxchord{Gm7}{seed~that's~been~sowed}\\
+\gtxchord{B$\flat$}{~~~and~the~}\gtxchord{F}{birds~up~on~the~wires~and~the~}\gtxchord{Dm}{telegraph~poles}\\
+\gtxchord{}{~~~they~can~}\gtxchord{C}{always~fly~away~from~this~rain~}\gtxchord{B$\flat$}{and~this~cold}\\
+\gtxchord{}{~~~you~can~here~them~}\gtxchord{C7}{singing~out~their~}\gtxchord{F}{telegraph~code}\\
+\gtxchord{}{~~~}\gtxchord{C}{all~the~w}\gtxchord{B$\flat$}{ay~down~the~telegraph~road}\gtxchord{Dm}{}\\
+
+
+
+
+\textit{solo}\\
+
+
+
+
+\gtxchord{C}{~~~You~know~I'd~}\gtxchord{F}{sooner~forget~but~I~re}\gtxchord{Dm}{member~those~nights}\\
+\gtxchord{}{~~~when~}\gtxchord{C}{life~was~just~a~bet~on~a~race~}\gtxchord{B$\flat$}{between~the~lights}\\
+\gtxchord{}{~~~}\gtxchord{F}{you~had~your~}\gtxchord{B$\flat$}{head~on~my~shoul}\gtxchord{C}{der~}\gtxchord{F}{you~had~your~}\gtxchord{C7}{hand~in~my~hair}\\
+\gtxchord{}{~~~now~}\gtxchord{B$\flat$}{you~act~a~little~colder~like~you~}\gtxchord{Gm7}{don't~seem~to~care}\\
+\gtxchord{B$\flat$}{~~~but~be}\gtxchord{F}{lieve~in~me~baby~and~I'll~}\gtxchord{Dm}{take~you~away}\\
+\gtxchord{}{~~~from~}\gtxchord{C}{out~of~this~darkness~and~}\gtxchord{B$\flat$}{into~the~day}\\
+\gtxchord{}{~~~from~these~rivers~of~}\gtxchord{C}{headlights~these~}\gtxchord{F}{rivers~of~rain}\gtxchord{C}{}\\
+\gtxchord{F/A}{~~~from~the~}\gtxchord{B$\flat$}{anger~that~lives~on~}\gtxchord{C7}{the~}\gtxchord{F}{streets~with~these~}\gtxchord{C}{names}\\
+\gtxchord{F/A}{~~~'cos~}\gtxchord{B$\flat$}{I've~run~every~red~light~}\gtxchord{C7}{on~}\gtxchord{F}{memory~lane}\gtxchord{F/A}{}\\
+\gtxchord{}{~~~I've~}\gtxchord{B$\flat$}{seen~desperation~}\gtxchord{C7}{exp}\gtxchord{F}{lode~into~}\gtxchord{C}{flames}\gtxchord{F/A}{}\\
+\gtxchord{B$\flat$}{~~~and~I~don't~}\gtxchord{C7}{want~to~}\gtxchord{F}{see~it~a}\gtxchord{C}{gain.~.~.}\\
+
+
+\gtxchord{}{~~~From~}\gtxchord{Am}{all~of~these~signs~saying~}\gtxchord{Dm}{sorry~but~we're~closed}\\
+\gtxchord{}{~~~all~the~}\gtxchord{B$\flat$}{way}\\
+
+
+\textit{solo}\\
+
+\addcontentsline{toc}{section}{God Rest Ye Merry Gentlemen}
+\section*{God Rest Ye Merry Gentlemen}
+\index{God Rest Ye Merry Gentlemen}
+
+\gtxchord{}{God~}\gtxchord{Em}{rest~ye~merry,~}\gtxchord{Hm}{gentlemen,~}\\
+\gtxchord{}{Let~}\gtxchord{A}{nothing~you~dis}\gtxchord{H}{may.}\\
+\gtxchord{Em}{Remember~Christ~our~}\gtxchord{Hm}{Saviour}\\
+\gtxchord{}{was~}\gtxchord{A}{born~on~Christmas}\gtxchord{H}{~day.}\\
+\gtxchord{}{To~}\gtxchord{C}{save~us~all~from~}\gtxchord{G}{Satan's~powers}\\
+\gtxchord{}{when~we~}\gtxchord{Hm}{were~gone~a}\gtxchord{D}{stray.}\\
+\gtxchord{}{O,~}\gtxchord{G}{tidings~of~}\gtxchord{Hm}{comfort~and~}\gtxchord{Em}{joy,~comfort~and~}\gtxchord{D}{joy;}\\
+\gtxchord{}{O,~}\gtxchord{G}{tidings~of~}\gtxchord{Hm}{comfort~}\gtxchord{D}{and~}\gtxchord{Em}{joy.}\\
+
+
+In~Bethlehem,~in~Israel, this~blessed~Babe~was~born\\
+And~laid~within~a~manger upon~this~blessed~morn\\
+The~which~His~Mother~Mary did~nothing~take~in~scorn\\
+O,~tidings~of~comfort~and~joy,~comfort~and~joy,\\
+O,~tidings~of~comfort~and~joy.\\
+
+
+From~God~our~Heavenly~Father a~blessed~Angel~came;\\
+And~unto~certain~Shepherds brought~tidings~of~the~same:\\
+How~that~in~Bethlehem~was~born the~Son~of~God~by~Name.\\
+O,~tidings~of~comfort~and~joy,~comfort~and~joy,\\
+O,~tidings~of~comfort~and~joy.\\
+
+%
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Země vzdálená}
+\section*{Země vzdálená}
+\index{Země vzdálená}\typeout{Země vzdálená}\index{BSP!Země vzdálená}\textit{BSP}\\
+
+
+\gtxchord{A}{Smutnej~déšť~a~}\gtxchord{E}{město~v~kouři}, \gtxchord{Hmi}{ticho~prázdnejch~rán}\\
+\gtxchord{F$\sharp$mi}{noční~můry~}\gtxchord{E}{pijou~silnej~čaj}\gtxchord{H}{}\\
+
+
+\gtxchord{A}{Smutnej~déšť~}\gtxchord{E}{oči~mhouříš}, \gtxchord{Hmi}{už~v~nich~nejsem~sám}\\
+\gtxchord{F$\sharp$mi}{ještě~málo~ži}\gtxchord{E}{jou~když~se~ptaj}\gtxchord{H}{}\\
+
+
+\textit{Ref:}\\
+
+\gtxchord{A}{Znám~tě~mnohem~}\gtxchord{E}{víc~země~vzdálená}\gtxchord{Hmi}{}\\
+\gtxchord{F$\sharp$mi}{spát~s~tajem}\gtxchord{E}{nou~závratí}\gtxchord{H}{}\\
+
+
+Roky~ztratí~sílu, když~ti~dál~šeptám:\\
+"While~my~guitar~gently~weeps."\\
+
+
+Pod~správnou~hvězdou v~malým~ráji~chtěl~jsem~říct:\\
+"Stil~my~guitar~gently~weeps."\\
+
+\gtxchord{G}{Den~chová~stín~v~}\gtxchord{D}{záclonách}\\
+\gtxchord{A}{toulavejch~pár~}\gtxchord{E}{koček~strach}\\
+\gtxchord{G}{sen~ti~skrývá~}\gtxchord{D}{na~víčkách}\\
+\gtxchord{}{že~jsi~}\gtxchord{A}{mou}\\
+
+\gtxchord{G}{Bláznům~se~jen~může~}\gtxchord{D}{smát}\\
+\gtxchord{A}{když~nám~ráno~dává~}\gtxchord{E}{mat}\\
+\gtxchord{G}{chtěl~jsem~dál~jen~}\gtxchord{D}{poslouchat}\\
+\gtxchord{}{že~jsi~}\gtxchord{E}{má~že~jsi~má}\gtxchord{F$\sharp$}{}\\
+
+
+\textit{Ref:2x}\\
+
+\gtxchord{H}{Znám~tě~mnohem~}\gtxchord{F$\sharp$}{víc~země~}\gtxchord{C$\sharp$mi}{vzdálená}\\
+\gtxchord{G$\sharp$mi}{spát~s~tajem}\gtxchord{F$\sharp$}{nou~závra}\gtxchord{C$\sharp$}{tí}\\
+Jééééééé
+
+\addcontentsline{toc}{section}{Biene Maja}
+\section*{Biene Maja}
+\index{Biene Maja}\index{Karel Gott!Biene Maja}\textit{Karel Gott}\\
+
+\gtxchord{C}{In~einem~unbekannten~L}\gtxchord{G}{and,}\\
+~vor~gar~nicht~allzu~langer~\gtxchord{C}{Zeit,~}\\
+\gtxchord{}{war~eine~Biene~sehr~}\gtxchord{G}{bekannt,}\\
+~von~der~sprach~alles~weit~und~\gtxchord{C}{breit.~}\\
+\gtxchord{}{Und~}\gtxchord{C}{die}\gtxchord{G}{se~}\gtxchord{C}{Biene,~die~ich~meine,~nennt~sich~}\gtxchord{G}{Maja,~}\\
+\gtxchord{}{kleine,~freche,~schlaue~Biene~}\gtxchord{C}{Maja.~}\\
+\gtxchord{}{Maja~fliegt~durch~ihre~}\gtxchord{G}{Welt,~zeigt~uns~das,~was~ihr~ge}\gtxchord{C}{fällt.~}\\
+\gtxchord{}{Wir~treffen~heute~unsre~Freundin,~Biene~}\gtxchord{G}{Maja,~}\\
+\gtxchord{}{diese~kleine,~freche~Biene~}\gtxchord{C}{Maja.~}\\
+\gtxchord{C7}{Maja,~alle~lieben~}\gtxchord{F}{Maja~!~~}\\
+\gtxchord{C}{Maja!~(Maja!)~Maja!~(Maja!)~Maja~!~Erzäh}\gtxchord{G}{le~uns~von~}\gtxchord{C}{dir~!~}\\
+
+Wenn~ich~an~einem~schönen~Tag\\
+durch~eine~Blumenwiese~geh,~\\
+und~kleine~Bienen~fliegen~seh,\\
+denk~ich~an~eine,~die~ich~mag.~\\
+Und~diese~Biene,~die~ich~meine,~nennt~sich~Maja,~\\
+kleine,~freche,~schlaue~Biene~Maja.~\\
+Maja~fliegt~durch~ihre~Welt,~zeigt~uns~das,~was~ihr~gefällt.~\\
+Wir~treffen~heute~unsre~Freundin,~Biene~Maja,~\\
+diese~kleine,~freche~Biene~Maja.~\\
+Maja,~alle~lieben~Maja~!~~\\
+Maja!~(Maja!)~Maja!~(Maja!)~Maja~!~Erzähle~uns~von~dir~!
+
+\addcontentsline{toc}{section}{Ducktales}
+\section*{Ducktales}
+\index{Ducktales}
+
+\gtxchord{E}{Life~is~like~a~hurricane}\\
+\gtxchord{D}{here~in~}\gtxchord{A}{Duckburg.}\\
+\gtxchord{E}{Race~cars,~lasers,~aeroplanes,}\\
+\gtxchord{D}{it's~}\gtxchord{A}{~A~}\gtxchord{D}{~duck-~}\gtxchord{A}{blur.}\\
+\gtxchord{F$\sharp$5}{Might~solve~A~}\gtxchord{B}{~mystery,}\\
+\gtxchord{A}{Or~rewrite~}\gtxchord{B}{~history~--}\\
+
+\textit{chorus:}\\
+
+\gtxchord{E}{DuckTales~(oooh~ooooh)!}\\
+\gtxchord{C}{Every~day~they're~}\gtxchord{D}{~out~there~making}\\
+\gtxchord{E}{DuckTales~(oooh~ooooh)!}\\
+\gtxchord{C}{Tales~of~daring~}\gtxchord{D}{~do~bad~and~good}\\
+\gtxchord{E}{Luck~tales~(oooh~ooooh)!}\\
+
+textit{bridge:}\\
+
+\gtxchord{C$\sharp$'5}{~D-D-D-Danger!~}\gtxchord{B}{~Watch~behind~you,}\\
+\gtxchord{A}{There's~a~stranger~}\gtxchord{E}{~out~to~find~you}\\
+\gtxchord{D}{What~to~do?~Just~}\gtxchord{A}{~grab~on~to~some~--}\\
+
+\textit{chorus:}\\
+DuckTales~(oooh~ooooh)!\\
+Every~day~they're~out~there~making\\
+DuckTales~(oooh~ooooh)!\\
+Tales~of~daring~do~bad~and~good\\
+Luck~tales~(oooh~ooooh)!
+
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{'74-'75}
+\begin{center}\section*{'74-'75}\end{center}
+\index{'74-'75}\index{The Connells!'74-'75}\begin{center}\textit{The Connells}\end{center}
+
+\textit{Intro:}\\
+\begin{gtxtab}
+\footnotesize \verb!|----------0--3------0-0-0-|! \normalsize \newline
+\footnotesize \verb!|----------1--0------1-0-1-|! \normalsize \newline
+\footnotesize \verb!|----------0--0------2-2-2-|! \normalsize \newline
+\footnotesize \verb!|--2-0-----2--0--2-2-2-2-2-|! \normalsize \newline
+\footnotesize \verb!|-0----3-0-3--2--0-0-0-0-0-|! \normalsize \newline
+\footnotesize \verb!|-------------3------------|! \normalsize \newline
+\end{gtxtab}
+
+\textit{1.}\\ \\
+\gtxchord{F}{Got~no~}\gtxchord{C}{reason~for~}\gtxchord{F}{coming~to~me~and~the~}\gtxchord{C}{rain~}\gtxchord{G}{running~}\gtxchord{F}{down~}\\
+{there's~no~}\gtxchord{C}{reason}\gtxchord{Am}{}\gtxchord{A2}{}\\
+\gtxchord{F}{and~the~}\gtxchord{C}{same~voice~}\gtxchord{F}{coming~to~me~like~it's~}\gtxchord{C}{all~}\gtxchord{G}{slowing~}\gtxchord{F}{down~}\\
+{and~}\gtxchord{C}{believe~me}\gtxchord{G}{}\\
+
+\textit{R1:}\\
+{I~was~the~}\gtxchord{Am}{one~who~let~you~}\gtxchord{C}{know,~}\\
+{I~was~just~}\gtxchord{G}{sorry~ever~}\gtxchord{F}{after}\\
+{seventy-}\gtxchord{Am}{four~,~seventy-}\gtxchord{C}{five}\gtxchord{G}{}\\
+
+\textit{2.}\\
+{It's~not~easy,~nothing~to~say~'cause~it's~already~said~}\\
+{It's~never~easy}\\
+{When~I~look~on~your~eyes~then~I~find~that~I'll~do~fine~}\\
+{When~I~look~on~your~eyes~then~I~do~better}\\
+
+\textit{R2:}\\
+{I~was~the~one~who~let~you~know,~}\\
+{I~was~just~sorry~ever~after}\\
+{seventy-four~,~seventy-five}\\
+{Givin~me~more~and~I'll~defy,~}\\
+{cause~you're~really~only~after}\\
+{seventy-four~,~seventy-five}\\
+
+\textit{Repeat Intro}\\
+\textit{Solo~(R)}\\
+
+\textit{3.}\\
+{Got~no~reason~for~coming~to~me~and~the~rain~running~down~}\\
+{there's~no~reason}\\
+{When~I~look~on~your~eyes~then~I~find~that~I'll~do~fine~}\\
+{When~I~look~on~your~eyes~then~I~do~better}\\
+
+\textit{R2~2x}\\
+\textit{Solo~(R)}\\
+\vfill
+%----- New Song -----
+\addcontentsline{toc}{section}{I Will Survive}
+\begin{center} \section*{I Will Survive}\end{center}
+\index{I Will Survive}\index{Gloria Gaynor!I Will Survive}\begin{center}\textit{Gloria Gaynor}\end{center}
+
+\gtxchord{Am}{}\gtxchord{Dm}{}\gtxchord{G}{}\gtxchord{C}{}\gtxchord{F}{}\gtxchord{Bm}{}\gtxchord{Em}{}\gtxchord{E}{}\\
+
+\textit{1.}\\
+{At~}\gtxchord{Am}{first~I~was~afraid,~I~was~}\gtxchord{Dm}{petrified~}\\
+{I~kept~thinkin'~}\gtxchord{G}{I~could~never~live~without~you~}\gtxchord{C}{by~my~side~}\\
+{But~then~I~}\gtxchord{F}{spent~so~many~nights~just~thinking~}\\
+\hspace*\fill \gtxchord{Bm}{how~you’ve~done~me~wrong~}\\
+{And~I~grew~}\gtxchord{Em}{strong,~I~learned~}\gtxchord{E}{how~to~get~along...}\\
+
+\textit{2.}\\
+{And~so~you're~back~from~outer~space,~}\\
+{I~just~walked~in~to~find~you~here~with~that,}\\
+\hspace*\fill {that~look~upon~your~face,~~}\\
+{I~should~have~changed~that~stupid~lock,}\\
+\hspace*\fill {I~should~have~made~you~leave~your~key~-~}\\
+{If~I’d~have~known~for~just~one~second}\\
+\hspace*\fill {you'd~be~back~to~bother~me.~}\\
+
+\textit{3.}\\
+{Oh~now~go,~walk~out~the~door,~}\\
+{Just~turn~around~now,~cause~you're~not~welcome~anymore.~}\\
+{Weren't~you~the~one~who~tried~to~hurt~me~with~good-bye?~}\\
+{Did~you~think~I'd~crumble?}\\
+\hspace*\fill {Did~you~think~I'd~lay~down~and~die?}\\
+
+\textit{4.}\\
+{Oh~not~I,~I~will~survive,~}\\
+{Yeah,~as~long~as~I~know~how~to~love,~I~know~I'll~be~alive.~}\\
+{I've~got~all~my~life~to~live,~I've~got~all~my~love~to~give,~}\\
+{I~will~survive,~I~will~survive,~Yeah,~yeah...}\\
+
+\textit{Solo}\\
+
+\textit{5.}\\
+{It~took~all~the~strength~I~had~just~not~to~fall~apart,~~}\\
+{I’m~tryin'~hard~to~mend~the~pieces~of~my~broken~heart,~}\\
+{And~I~spent~oh~so~many~nights~just~feelin'~sorry~for~myself,~}\\
+{I~used~to~cry,~But~now~I~hold~my~head~up~high.~}\\
+
+\textit{6.}\\
+{And~you’ll~see~me~with~somebody~new,~}\\
+{I'm~not~that~stupid~little~person~still~in~love~with~you.~}\\
+{And~so~you~thought~you’d~just~drop~by}\\
+\hspace*\fill {and~you~expect~me~to~be~free,~}\\
+{But~now~I'm~saving~all~my~lovin'}\\
+\hspace*\fill {for~someone~who's~lovin'~me.}\\
+
+\textit{7. = 3.}\\
+
+\textit{8. = 4.}\\
+
+\textit{9. = 3.}\\
+
+\textit{8. = 4. (and fade)}\\
+
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{It's My Life}
+\begin{center} \section*{It's My Life}\end{center}
+\index{It's My Life}\index{Bon Jovi!It's My Life}\begin{center}\it Bon Jovi\end{center}
+
+\textit{Intro}\\
+\begin{gtxtab}
+\footnotesize \verb!E|--------------1-0---------------------|! \normalsize \newline
+\footnotesize \verb!B|----1-------5-----1--1----1--0--------| ! \normalsize \newline
+\footnotesize \verb!G|*---2-----5----------2----------2----*|! \normalsize \newline
+\footnotesize \verb!D|*---2--/7------------3---------------*|! \normalsize \newline
+\footnotesize \verb!A|--------------------------------------| ! \normalsize \newline
+\footnotesize \verb!E|--------------------------------------|! \normalsize \newline
+\end{gtxtab}
+
+\textit{1.}\\ \\
+\gtxchord{Am}{This~ain't~a~song~for~the~}\gtxchord{Em}{broken~hearted}\gtxchord{G}{}\\
+{Nor~a~}\gtxchord{Am}{silent~prayer~for~}\gtxchord{Em}{death-departed}\gtxchord{G}{}\\
+{I~a}\gtxchord{Am}{in't~gonna~be~just~a~}\gtxchord{Em}{face~in~the~crowd}\\
+{You're~gonna~}\gtxchord{C}{hear~my~voice~when~I~}\gtxchord{G}{shout~it~out~}\gtxchord{Am}{loud}\\
+
+\textit{Chorus:}\\ \\
+{It's~my~}\gtxchord{Am}{life,~it's~}\gtxchord{F}{now~or~never}\gtxchord{C}{}\\
+{I~ain't~gonna~}\gtxchord{G}{live~forever}\gtxchord{Am}{}\\
+{I~just~want~to~}\gtxchord{F}{live~when~I'm~a}\gtxchord{C}{live}\gtxchord{Em}{}\gtxchord{G}{}\\
+{It's~my~}\gtxchord{Am}{life;~my~heart~is~like~an~}\gtxchord{F}{open~highway}\gtxchord{C}{}\\
+{Like~Frankie~said~I~did~it~}\gtxchord{G}{my~way,}\gtxchord{Am}{}\\
+{I~just~wanna~}\gtxchord{F}{live~when~I'm~a}\gtxchord{Em}{live}\\
+\gtxchord{Em}{It's~}\gtxchord{G}{my~l}\gtxchord{C}{ife}\\
+
+\textit{2.}\\
+{This~is~for~ones~who~stood~their~ground}\\
+{Like~Tommy~and~Gina,~never~backed~down}\\
+{Tomorrow's~getting~harder~make~no~mistake}\\
+{Luck~ain't~even~lucky~got~to~make~your~own~breaks}\\
+
+\textit{Chorus}\\
+
+\textit{Solo}\\
+
+\textit{Bridge:}\\ \\
+{You~be}\gtxchord{G}{tter~stand~tall~when~they're~}\gtxchord{C}{calling~you~out}\\
+{Don't~b}\gtxchord{Am}{end~don't~break~baby~}\gtxchord{Em}{don't~back~down}\gtxchord{G}{~}\\
+
+\textit{Chorus 2x}
+%----- New Song -----
+\addcontentsline{toc}{section}{My Name Is Luka}
+\begin{center} \section*{My Name Is Luka}\end{center}
+\index{My Name Is Luka}\index{Suzanne Vega!My Name Is Luka}\begin{center}\it Suzanne Vega\end{center}
+
+\textit{Intro }\\ \\
+\gtxchord{/:~G~D~C~D~:/}{}
+
+\textit{1.}\\ \\
+\gtxchord{G}{~~My~name~is~}\gtxchord{D}{Luka}\\
+\gtxchord{C}{~~I~live~on~the~}\gtxchord{D}{second~floor}\\
+\gtxchord{G}{~~I~live~upstairs~}\gtxchord{D}{from~you}\\
+\gtxchord{C}{~~Yes~I~think~you've~}\gtxchord{D}{seen~me~before~}\\
+
+\textit{Chorus 1:}\\ \\
+\gtxchord{Em}{~~If~you~hear~}\gtxchord{D}{something~late~at~night}\\
+\gtxchord{Em}{~~Some~kind~of~}\gtxchord{D}{trouble.~Some~kind~of~fight}\\
+\gtxchord{C}{~~Just~don't~}\gtxchord{D}{ask~me~what~it~was}\\
+\gtxchord{C}{~~Just~don't~}\gtxchord{D}{ask~me~what~it~was}\\
+\gtxchord{C}{~~Just~don't~}\gtxchord{D}{ask~me~what~it~was~}\\
+
+\textit{2. }\\
+{I~think~it's~because~I'm~clumsy}\\
+{I~try~not~to~talk~too~loud}\\
+{Maybe~it's~because~I'm~crazy}\\
+{I~try~not~to~act~too~proud}\\
+
+\textit{Chorus 2:}\\
+{They~only~hit~until~you~cry}\\
+{and~after~that~you~don't~ask~why}\\
+{you~just~don't~argue~anymore}\\
+{you~just~don't~argue~anymore}\\
+{you~just~don't~argue~anymore}\\
+
+\textit{Solo~(intro)}\\
+
+\textit{3.}\\
+{Yes~I~think~I'm~okay}\\
+{I~walked~into~the~door~again}\\
+{Well,~if~you~ask~that's~what~I'll~say}\\
+{and~it's~not~your~business~anyway}\\
+
+\textit{Chorus 3:}\\
+{I~guess~I'd~like~to~be~alone}\\
+{with~nothing~broken,~nothing~thrown~}\\
+{Just~don't~ask~me~how~I~am}\\
+{Just~don't~ask~me~how~I~am}\\
+{Just~don't~ask~me~how~I~am}\\
+
+
+\textit{4. }\\
+{My~name~is~Luka}\\
+{I~live~on~the~second~floor}\\
+{I~live~upstairs~from~you}\\
+{Yes~I~think~you've~seen~me~before~}\\
+
+
+\textit{Chorus 1}\\
+
+
+\textit{Chorus 2}\\
+
+
+\textit{Solo (intro)}
+
+%----- New Song -----
+\newpage\addcontentsline{toc}{section}{Underneath Your Clothes}
+\begin{center} \section*{Underneath Your Clothes}\end{center}
+\index{Underneath Your Clothes}\index{Shakira!Underneath Your Clothes}\begin{center}\it Shakira\end{center}
+
+\textit{1.}\\ \\
+\gtxchord{Fm}{You're~a~}\gtxchord{Cm}{song~}\gtxchord{C$\sharp$}{written~by~the~}\gtxchord{E$\flat$}{hands~of~G}\gtxchord{Fm}{od}\\
+{Don't~get~me~wr}\gtxchord{Cm}{ong}\\
+{'cause~th}\gtxchord{C$\sharp$}{is~might~sound~to~yo}\gtxchord{E$\flat$}{u~a~bit~o}\gtxchord{Fm}{dd}\\
+{But~you~o}\gtxchord{Cm}{wn~the~p}\gtxchord{C$\sharp$}{lace}\\
+{where~}\gtxchord{E$\flat$}{all~my~thoughts~go}\gtxchord{Fm}{~hidi}\gtxchord{Cm}{ng}\\
+{And~r}\gtxchord{C$\sharp$}{ight~under~your~clothes~is~wh}\gtxchord{E$\flat$}{ere~I'll~find~them}\\
+
+\textit{Chorus:}\\ \\
+\gtxchord{A$\flat$}{Undern}\gtxchord{Cm7}{eath~your~c}\gtxchord{C$\sharp$}{lothes,~there's~an~}\gtxchord{E$\flat$}{endless~story}\\
+\gtxchord{A$\flat$}{There's~the~m}\gtxchord{Cm7}{an~I~c}\gtxchord{C$\sharp$}{hose,~there's~my~}\gtxchord{E$\flat$}{territory}\\
+{And~}\gtxchord{Cm}{all~the~things~I~des}\gtxchord{Fm}{erve}\\
+{For~b}\gtxchord{C$\sharp$}{eing~such~a~g}\gtxchord{E$\flat$}{ood~girl,~honey}\gtxchord{A$\flat$}{}\gtxchord{C$\sharp$}{}\\
+
+\textit{2.}\\
+{'Cause~of~you~I~forgot~the~smart~ways~to~lie}\\
+{Because~of~you~}\\
+{I'm~running~out~of~reasons~to~cry}\\
+{When~the~friends~are~gone}\\
+{When~the~party~is~over}\\
+{We~will~still~belong~to~each~other}\\
+
+\textit{Chorus}\\
+
+\textit{Coda:}\\
+{I~}\gtxchord{B}{love~you~more}\gtxchord{B/Ab}{~than~all~tha}\gtxchord{A$\flat$m}{t's~on~the~planet}\\
+{moving,~talking,~walking,~br}\gtxchord{F$\sharp$}{eathing}\\
+{You~kn}\gtxchord{E}{ow~it's~true,~oh~babe~it's~so~funny}\\
+{You~}\gtxchord{F$\sharp$}{almost~don't~believe~it}\\
+
+{As~every~voice~is~hanging~from~the~silence}\\
+{Lamps~are~hanging~from~the~ceiling}\\
+{Like~a~lady~tied~to~her~manners}\\ \\
+\gtxchord{F$\sharp$}{I'm~tied~up~to~this~f}\gtxchord{Fm}{eel(ing)}\\
+
+\textit{Solo:}\\ \\
+\gtxchord{:~Fm~Cm~C$\sharp$~Eb~:}{~(3x)}\\
+
+\textit{Chorus 2x}\\
+{For~being~such~a~good~girl~...}\\
+\vfill
+\addcontentsline{toc}{section}{Roxanne}
+\begin{center} \section*{Roxanne}\end{center}
+\index{Roxanne}\index{Sting!Roxanne}\begin{center}\it Sting\end{center}
+
+\textit{Intro:}\\ \\
+\gtxchord{|~Gm7~~|~Gm7~Dm7/F~|~Ebmaj7~Dm7~|~Cm7~Fsus4~|~Gsus4}{}
+
+\textit{1.}\\ \\
+{Ro}\gtxchord{Gm7}{xanne}\gtxchord{Dm7/F}{,~you~don't~have~to~}\gtxchord{E$\flat$maj7}{put~on~the~red~light}\gtxchord{Dm7}{}\\
+\gtxchord{Cm7}{~~~Those~days~are~ove}\gtxchord{Fsus4}{r,~you~don't~have~to~}\\\hspace*\fill\gtxchord{Gsus4}{sell~your~body~to~the~night}\\
+{Roxanne,~you~don't~have~to~wear~that~dress~tonight~}\\
+Walk~the~streets~for~money,\\\hspace*\fill~you~don't~care~if~it's~wrong~or~if~it's~right\\
+
+\textit{Chorus:}\\ \\
+{Ro}\gtxchord{Cm7}{xanne}\gtxchord{Fsus4}{,~you~don't~have~to~}\gtxchord{Gsus4}{put~on~the~red~light~}\\
+Roxanne,~you~don't~have~to~put~on~the~red~light~\\
+
+\gtxchord{Cm}{Roxan}\gtxchord{B$\flat$}{ne~(Put~on~the~red~light)~}\\
+\gtxchord{E$\flat$}{Roxan}\gtxchord{F}{ne~(Put~on~the~red~light)~}\\
+\gtxchord{F}{Roxan}\gtxchord{Gm}{ne~(Put~on~the~red~light)~}\\
+\gtxchord{Cm}{Roxan}\gtxchord{B$\flat$}{ne~(Put~on~the~red~light)~}\\
+\gtxchord{E$\flat$}{Roxan}\gtxchord{F}{ne~(Put~on~the~red~light)~~}\gtxchord{Gsus4}{oh~}\\
+
+\textit{2.}\\
+{I~loved~you~since~I~knew~ya,~I~wouldn't~talk~down~to~ya~}\\
+I~have~to~tell~you~just~how~I~feel,\\\hspace*\fill~I~won't~share~you~with~another~boy~\\
+{I~know~my~mind~is~made~up,~so~put~away~your~make~up~}\\
+{Told~you~once~I~won't~tell~you~again~it's~a~crime~way~}\\
+
+\textit{Chorus}
+
+\newpage\addcontentsline{toc}{section}{Englishman in New York}
+\begin{center} \section*{Englishman in New York}\end{center}
+\index{Englishman in New York}\index{ Sting!Englishman in New York}\begin{center}\it Sting\end{center}
+
+\gtxchord{Bm}{~~}\gtxchord{Bm7}{~}\\
+\textit{1.}\\ \\
+\gtxchord{Em}{I~don't~drink~c}\gtxchord{A}{offee~I~take~}\gtxchord{Bm}{tea~my~dear}\gtxchord{Bm7}{~}\\
+\gtxchord{Em}{I~like~my~t}\gtxchord{A}{oast~done~on~the~}\gtxchord{Bm}{side}\gtxchord{Bm7}{~}\\
+\gtxchord{Em}{And~you~can~h}\gtxchord{A}{ear~it~in~my~}\gtxchord{Bm}{accent~when~I~}\gtxchord{Bm7}{talk~}\\
+{I'm~an~E}\gtxchord{Em}{nglishman~}\gtxchord{A}{in~New~Y}\gtxchord{Bm}{ork}\gtxchord{Bm7}{~}
+
+\textit{2.}\\
+{See~me~walking~down~Fifth~Avenue~}\\
+{A~walking~cane~here~at~my~side~}\\
+{I~take~it~everywhere~I~walk~}\\
+{I'm~an~Englishman~in~New~York~}
+
+\medskip\textit{Chorus:}\\ \\
+\gtxchord{Em}{I'm~an~a}\gtxchord{A}{lien~~~}\gtxchord{Bm}{I'm~a~legal~}\gtxchord{Bm7}{alien~}\\
+{I'm~an~E}\gtxchord{Em}{nglishman~}\gtxchord{A}{in~New~Y}\gtxchord{Bm}{ork}\gtxchord{Bm7}{~}\\
+\gtxchord{Em}{I'm~an~a}\gtxchord{A}{lien~~~}\gtxchord{Bm}{I'm~a~legal~}\gtxchord{Bm7}{alien~}\\
+{I'm~an~E}\gtxchord{Em}{nglishman~}\gtxchord{A}{in~New~Y}\gtxchord{Bm}{ork}\gtxchord{Bm7}{~}
+
+\textit{3.}\\
+{If~``manners~maketh~man''~as~someone~said~}\\
+{Then~he's~the~hero~of~the~day~}\\
+{It~takes~a~man~to~suffer~ignorance~and~smile~}\\
+{Be~yourself~no~matter~what~they~say~}
+
+\medskip\textit{Chorus}
+
+\textit{Bridge:}\\ \\
+\gtxchord{D}{Modesty,~propriety~can~l}\gtxchord{A}{ead~to~not}\gtxchord{A7}{oriety~}\\
+\gtxchord{Bm}{You~could~end}\gtxchord{Bm7}{~up~as~the~only~}\gtxchord{F$\sharp$}{one~}\\
+{G}\gtxchord{G}{entleness,~sobriety~are~r}\gtxchord{A}{are~in~this~society~}\\
+{At~}\gtxchord{Gdim7}{night~a~candle's~brighter~than~the~}\gtxchord{Bm}{sun~}
+
+\textit{4.}\\
+{Takes~more~than~combat~gear~to~make~a~man~}\\
+{Takes~more~than~license~for~a~gun~}\\
+{Confront~your~enemies,~avoid~them~when~you~can~}\\
+{A~gentleman~will~walk~but~never~run~}
+
+\medskip\textit{5. = 3., Chorus}
+\addcontentsline{toc}{section}{Sixteen Tons}
+\begin{center} \section*{Sixteen Tons}\end{center}
+\index{Sixteen Tons}\index{Tennessee Ernie Ford!Sixteen Tons}\begin{center}\it Tennessee Ernie Ford\end{center}
+
+\textit{1.}\\ \\
+\gtxchord{Am}{Some~people~say~a~man's~}\gtxchord{Dm}{made~out~of~}\gtxchord{E}{mud}\\
+{but~a~}\gtxchord{Am}{poor~man's~made~out~of~}\gtxchord{Dm}{muscle~and~}\gtxchord{E}{blood}\\
+\gtxchord{Am}{Muscle~and~blood,~}\gtxchord{Dm}{skin~and~bones,}\\
+\gtxchord{Am}{a~mind~that's~weak~and~a~}\gtxchord{E}{body~that's~}\gtxchord{E7}{strong}
+
+\textit{Chorus:}\\
+{You~load~}\gtxchord{Am}{sixteen~}\gtxchord{Am/G}{tons~and~}\gtxchord{Am/F}{whaddya~}\gtxchord{E}{get,}\\
+{a}\gtxchord{Am}{nother~day~}\gtxchord{Am/G}{older~and~}\gtxchord{Am/F}{deeper~in~}\gtxchord{E}{debt}\\
+{Saint~}\gtxchord{Am}{Peter~don't~you~call~me~'cause~}\gtxchord{Dm}{I~can't~go,}\\
+{I}\gtxchord{Am}{~owe~my~soul~to~the~}\gtxchord{E}{company~}\gtxchord{Am}{store}
+
+\textit{2.}\\
+{I~was~born~one~morning~when~the~sun~didn't~shine,}\\
+{picked~up~my~shovel~and~walked~to~the~mine}\\
+{I~loaded~sixteen~tons~of~number~nine~coal;}\\
+the~straw~boss~said~``well,~damn~my~soul.''
+
+\medskip\textit{Chorus}
+
+\textit{3.}\\
+{I~was~born~one~morning,~it~was~drizzling~rain.}\\
+{Fightin'~and~trouble~are~my~middle~name.}\\
+{I~was~raised~in~a~cane~break~by~an~old~mama~lion,}\\
+{can't~no~high-toned~woman~make~me~walk~the~line}
+
+\medskip\textit{Chorus}
+
+\textit{4.}\\
+{If~you~see~me~comin'~you~better~step~aside;}\\
+{another~man~didn't~and~another~man~died.}\\
+{I've~got~a~fist~full~of~iron~and~a~fist~full~of~steel,}\\
+{if~the~left~one~don't~get~you,~well,~the~right~one~will}
+
+\textit{Chorus}
+\addcontentsline{toc}{section}{All By Myself}
+\begin{center} \section*{All By Myself}\end{center}
+\index{All By Myself}\index{Eric Carmen!All By Myself}\begin{center}\it Eric Carmen\end{center}
+\textit{Intro:} \textbf{\scriptsize F} 8x
+
+\textit{1.}\\ \\
+\gtxchord{F}{When~I~was~young,~}{I~never~}\gtxchord{B$\flat$m/F}{needed~anyone}\gtxchord{F~Am7-5/Eb}{}\\
+{And~makin'~}\gtxchord{Dsus4}{love~was~}\gtxchord{D}{just~for~fun}\gtxchord{Gm}{...}\gtxchord{B$\flat$m6}{those~days~are~gone}
+
+\medskip\textit{Bridge 1:} \textbf{\scriptsize F/A~F/A~Gm7-5~C/E}
+
+\textit{2.}\\
+{Livin'~alone,~I~think~of~all~the~friends~I've~known}\\
+{But~when~I~dial~the~telephone, nobody's~home}
+
+\medskip\textit{Bridge 2:} \textbf{\scriptsize F/A F/A D7 D G7 C7 C7}
+
+\textit{Chorus:}\\ \\
+\gtxchord{F}{All~by~mys}\gtxchord{Am}{elf}{,~don't~wanna~be}\gtxchord{Am7-5/Eb}{}\\
+{All~by~}\gtxchord{D7}{myself}\gtxchord{Gm}{~anymore}\gtxchord{Gm7-5/C$\sharp$~~C7}{}\\
+\gtxchord{F}{All~by~mys}\gtxchord{Am}{elf}{,~don't~wanna~live}\gtxchord{Am7-5/Eb}{}\\
+{All~by~}\gtxchord{D7}{myself}\gtxchord{Gm}{~anymore}\gtxchord{Gm7-5/C$\sharp$~~C7}{}
+
+\textit{3.}\\
+{Hard~to~be~sure,~sometimes~I~feel~so~insecure}\\
+{And~love,~so~distant~and~obscure,~remains~the~cure}\\
+
+\textit{Bridge 1, 4. = 1., Bridge 2, Chorus}
+
+%%%%%%
+% INDEX
+%%%%%%
+
+\newpage
+\fancypagestyle{plain}{%
+  \fancyhf{}                          % clear all header and footer fields
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\small\printindex
+\end{document}
